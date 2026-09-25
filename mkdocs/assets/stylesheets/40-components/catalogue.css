@@ -1,0 +1,642 @@
+/* =============================================================================
+ * The Lupaxa Project Portal
+ * Catalogue Cards
+ * ============================================================================= */
+
+/* Catalogue cards */
+
+.md-typeset .grid.cards.catalogue-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+.md-typeset .grid.cards.catalogue-grid > ul > li,
+.md-typeset .grid.cards.catalogue-grid > li {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  cursor: default;
+}
+
+.md-typeset .catalogue-grid > ul > li > p:first-child a,
+.md-typeset .catalogue-grid > li > p:first-child a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.md-typeset .catalogue-grid > ul > li > h3:first-child,
+.md-typeset .catalogue-grid > li > h3:first-child {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: normal;
+  scroll-margin-top: calc(var(--lupaxa-header-height) + 0.75rem);
+}
+
+.md-typeset .catalogue-grid > ul > li > h3:first-child .twemoji,
+.md-typeset .catalogue-grid > li > h3:first-child .twemoji {
+  margin-right: 0.35rem;
+  vertical-align: middle;
+}
+
+.md-typeset .catalogue-grid > ul > li:has(> h3:target),
+.md-typeset .catalogue-grid > li:has(> h3:target) {
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(
+        in srgb,
+        var(--md-default-bg-color) 90%,
+        var(--lupaxa-light-blue)
+      ),
+      var(--md-default-bg-color)
+    );
+  border-color:
+    color-mix(
+      in srgb,
+      var(--lupaxa-light-blue) 45%,
+      var(--md-default-fg-color--lightest)
+    );
+}
+
+/* Stretch the title link across the whole card when present. */
+.md-typeset .catalogue-grid > ul > li > p:first-child a::after,
+.md-typeset .catalogue-grid > li > p:first-child a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.md-typeset .catalogue-grid > ul > li > p:first-child a:hover,
+.md-typeset .catalogue-grid > ul > li > p:first-child a:focus-visible,
+.md-typeset .catalogue-grid > li > p:first-child a:hover,
+.md-typeset .catalogue-grid > li > p:first-child a:focus-visible {
+  color: var(--lupaxa-light-blue);
+}
+
+.md-typeset .catalogue-grid > ul > li:focus-within,
+.md-typeset .catalogue-grid > li:focus-within {
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(
+        in srgb,
+        var(--md-default-bg-color) 90%,
+        var(--lupaxa-light-blue)
+      ),
+      var(--md-default-bg-color)
+    );
+  border-color:
+    color-mix(
+      in srgb,
+      var(--lupaxa-light-blue) 45%,
+      var(--md-default-fg-color--lightest)
+    );
+  box-shadow: var(--lupaxa-shadow-card-hover);
+}
+
+/* Grey plate around the artwork. The image keeps the card colour so
+   transparent cutouts in the file do not pick up the grey. */
+.md-typeset .grid.cards.catalogue-grid.catalogue-grid--articles > ul > li > hr:first-of-type,
+.md-typeset .grid.cards.catalogue-grid.catalogue-grid--articles > li > hr:first-of-type {
+  margin-bottom: var(--lupaxa-spacing-md);
+}
+
+.md-typeset .grid.cards.catalogue-grid.catalogue-grid--articles p:has(img.catalogue-logo) {
+  min-height: 0;
+  margin-top: 0;
+  margin-bottom: var(--lupaxa-spacing-md);
+  padding: 0.4rem;
+  background-color: color-mix(in srgb, var(--lupaxa-white) 16%, var(--md-default-bg-color));
+  border-radius: var(--lupaxa-radius-card);
+}
+
+.md-typeset .grid.cards.catalogue-grid.catalogue-grid--articles img.catalogue-logo {
+  width: 100%;
+  max-width: 100%;
+  max-height: none;
+  height: auto;
+  background-color: var(--md-default-bg-color);
+  border-radius: calc(var(--lupaxa-radius-card) - 0.4rem);
+}
+
+.md-typeset .catalogue-grid.catalogue-grid--articles > ul > li > p:first-child strong,
+.md-typeset .catalogue-grid.catalogue-grid--articles > li > p:first-child strong,
+.md-typeset .catalogue-grid.catalogue-grid--articles > ul > li > h3:first-child,
+.md-typeset .catalogue-grid.catalogue-grid--articles > li > h3:first-child {
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+
+.md-typeset .catalogue-grid > ul > li > p:first-child,
+.md-typeset .catalogue-grid > li > p:first-child {
+  margin: 0;
+}
+
+.md-typeset .catalogue-grid > ul > li > p:first-child strong,
+.md-typeset .catalogue-grid > li > p:first-child strong {
+  font-size: 1.08rem;
+  line-height: 1.35;
+}
+
+.md-typeset .catalogue-grid > ul > li > hr:first-of-type,
+.md-typeset .catalogue-grid > li > hr:first-of-type {
+  width: 100%;
+  margin: 0.8rem 0;
+}
+
+.md-typeset .catalogue-grid li:has(> p:only-child) {
+  display: block;
+  min-height: initial;
+  text-align: left;
+}
+
+.md-typeset .grid.cards.catalogue-grid[data-organisation-catalogue] > ul > li > hr:first-of-type,
+.md-typeset .grid.cards.catalogue-grid[data-organisation-catalogue] > li > hr:first-of-type,
+.md-typeset .grid.cards.catalogue-grid[data-project-catalogue] > ul > li > hr:first-of-type,
+.md-typeset .grid.cards.catalogue-grid[data-project-catalogue] > li > hr:first-of-type,
+.md-typeset .grid.cards.catalogue-grid[data-policy-catalogue] > ul > li > hr:first-of-type,
+.md-typeset .grid.cards.catalogue-grid[data-policy-catalogue] > li > hr:first-of-type {
+  margin-top: 0.8rem;
+  margin-bottom: 0.95rem;
+}
+
+.md-typeset .grid.cards.catalogue-grid[data-organisation-catalogue] p:has(img.catalogue-logo),
+.md-typeset .grid.cards.catalogue-grid[data-project-catalogue] p:has(img.catalogue-logo),
+.md-typeset .grid.cards.catalogue-grid[data-policy-catalogue] p:has(img.catalogue-logo) {
+  min-height: 0;
+  margin-bottom: 0.9rem;
+}
+
+.md-typeset .catalogue-grid p:has(img.catalogue-logo) {
+  display: flex;
+  width: 100%;
+  min-height: 8rem;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 var(--lupaxa-spacing-md);
+  padding: 0;
+  text-align: center;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
+
+.md-typeset .catalogue-grid p:has(img.catalogue-logo) > a,
+.md-typeset .catalogue-grid p:has(img.catalogue-logo) > button,
+.md-typeset .catalogue-grid p:has(img.catalogue-logo) > .catalogue-logo-wrap {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  appearance: none;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  transition:
+    filter var(--lupaxa-transition-fast),
+    box-shadow var(--lupaxa-transition-fast);
+}
+
+.md-typeset .catalogue-grid p:has(img.catalogue-logo) > .catalogue-logo-wrap {
+  cursor: default;
+}
+
+.md-typeset .catalogue-grid img.catalogue-logo {
+  display: block;
+  width: auto;
+  max-width: min(100%, 128px);
+  height: auto;
+  max-height: 128px;
+  margin: 0;
+  object-fit: contain;
+}
+
+.md-typeset .catalogue-grid p:has(img.catalogue-logo) > a:hover,
+.md-typeset .catalogue-grid p:has(img.catalogue-logo) > a:focus-visible,
+.md-typeset .catalogue-grid p:has(img.catalogue-logo) > button:hover,
+.md-typeset .catalogue-grid p:has(img.catalogue-logo) > button:focus-visible,
+.md-typeset .catalogue-grid p:has(img.catalogue-logo) > .catalogue-logo-wrap:hover,
+.md-typeset .catalogue-grid p:has(img.catalogue-logo) > .catalogue-logo-wrap:focus-visible {
+  filter: brightness(1.08);
+  box-shadow:
+    0 0 0 2px
+    color-mix(
+      in srgb,
+      var(--lupaxa-light-blue) 35%,
+      transparent
+    );
+}
+
+/* Keep actionable controls above any stretched title-link hit area. */
+.md-typeset .catalogue-grid p:has(img.catalogue-logo) > a,
+.md-typeset .catalogue-grid p:has(img.catalogue-logo) > button,
+.md-typeset .catalogue-grid p:has(img.catalogue-logo) > .catalogue-logo-wrap,
+.md-typeset .catalogue-grid .catalogue-action,
+.md-typeset .catalogue-grid .catalogue-category {
+  position: relative;
+  z-index: 2;
+}
+
+/* Diagonal status banner: flush sash with text flex-centred inside the band. */
+.md-typeset .catalogue-grid > ul > li > p:has(.catalogue-banner),
+.md-typeset .catalogue-grid > li > p:has(.catalogue-banner) {
+  position: static;
+  flex: 0 0 0;
+  height: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+}
+
+.md-typeset .catalogue-grid .catalogue-banner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  width: 7.5rem;
+  height: 7.5rem;
+  overflow: hidden;
+  pointer-events: auto;
+  cursor: pointer;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+  border-top-right-radius: var(--lupaxa-radius-card);
+}
+
+/*
+ * Classic overhang sash, clipped flush to top + right.
+ * Text lives inside the band so cross-axis centering matches the colour plate.
+ * Asymmetric padding shifts the flex centre onto the visible (clipped) segment.
+ */
+.md-typeset .catalogue-grid .catalogue-banner__band {
+  position: absolute;
+  top: 1.7rem;
+  right: -2.55rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12.25rem;
+  height: 1.7rem;
+  margin: 0;
+  /* Midpoint between prior undershoot (~1.65) and overshoot (~2.85). */
+  padding: 0 0.35rem 0 2.15rem;
+  box-sizing: border-box;
+  background: var(--lupaxa-blue);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--lupaxa-dark-blue) 35%, transparent);
+  transform: rotate(45deg);
+  transform-origin: center center;
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--short .catalogue-banner__band {
+  /* Short words sit too far into the outer tip with the default padding. */
+  padding: 0 1rem 0 1.25rem;
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--with-version .catalogue-banner__band {
+  top: 1.45rem;
+  height: 2.15rem;
+}
+
+.md-typeset .catalogue-grid .catalogue-banner__version {
+  display: block;
+  margin: 0.14rem 0 0;
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.md-typeset .catalogue-grid .catalogue-banner__text {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  color: var(--lupaxa-white);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background: transparent;
+  transform: none;
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--red .catalogue-banner__band {
+  background: #b43b3b;
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--red .catalogue-banner__text {
+  color: var(--lupaxa-white);
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--green .catalogue-banner__band {
+  background: #2f7a4a;
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--green .catalogue-banner__text {
+  color: var(--lupaxa-white);
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--purple .catalogue-banner__band {
+  background: #5c4f8c;
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--purple .catalogue-banner__text {
+  color: var(--lupaxa-white);
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--blue .catalogue-banner__band {
+  background: var(--lupaxa-blue);
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--blue .catalogue-banner__text {
+  color: var(--lupaxa-white);
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--dark-blue .catalogue-banner__band {
+  background: var(--lupaxa-dark-blue);
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--dark-blue .catalogue-banner__text {
+  color: var(--lupaxa-white);
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--orange .catalogue-banner__band {
+  background: #d4782a;
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--orange .catalogue-banner__text {
+  color: var(--lupaxa-dark-blue);
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--neutral .catalogue-banner__band {
+  background: var(--lupaxa-dark-blue);
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--neutral .catalogue-banner__text {
+  color: var(--lupaxa-white);
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--silver .catalogue-banner__band {
+  background: #8d97a6;
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--silver .catalogue-banner__text {
+  color: var(--lupaxa-dark-blue);
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--magenta .catalogue-banner__band {
+  /* Midpoint on the red→purple hue arc (not through yellow/green). */
+  background: #9a4a7a;
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--magenta .catalogue-banner__text {
+  color: var(--lupaxa-white);
+}
+
+.md-typeset .catalogue-grid
+  > ul
+  > li
+  > hr:first-of-type
+  + p:not(:has(img.catalogue-logo)):not(:has(.catalogue-banner)),
+.md-typeset .catalogue-grid
+  > li
+  > hr:first-of-type
+  + p:not(:has(img.catalogue-logo)):not(:has(.catalogue-banner)),
+.md-typeset .catalogue-grid
+  p:has(img.catalogue-logo)
+  + p {
+  flex: 1 1 auto;
+  min-height: 4.65rem;
+  margin: 0;
+}
+
+.md-typeset .catalogue-grid code {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  color: var(--lupaxa-light-blue);
+  font: inherit;
+  white-space: inherit;
+  word-break: break-word;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.md-typeset .catalogue-category {
+  display: inline-block;
+  margin: 0;
+  padding: 0.08rem 0.28rem;
+  color: var(--lupaxa-blue);
+  font: inherit;
+  font-size: 0.58rem;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  appearance: none;
+  cursor: pointer;
+  background:
+    color-mix(
+      in srgb,
+      var(--lupaxa-blue) 8%,
+      transparent
+    );
+  border:
+    1px solid
+    color-mix(
+      in srgb,
+      var(--lupaxa-blue) 24%,
+      var(--md-default-fg-color--lightest)
+    );
+  border-radius: var(--lupaxa-radius-pill);
+  transition:
+    color var(--lupaxa-transition-fast),
+    background-color var(--lupaxa-transition-fast),
+    border-color var(--lupaxa-transition-fast);
+}
+
+.md-typeset .catalogue-category:hover {
+  color: var(--lupaxa-white);
+  background: var(--lupaxa-blue);
+  border-color: var(--lupaxa-blue);
+}
+
+.md-typeset .catalogue-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0;
+  color: var(--lupaxa-light-blue);
+  font-size: 0.76rem;
+  font-weight: 650;
+  line-height: 1.5;
+  text-decoration: none !important;
+  white-space: nowrap;
+}
+
+.md-typeset .catalogue-action:hover,
+.md-typeset .catalogue-action:focus,
+.md-typeset .catalogue-action:active,
+.md-typeset .catalogue-action:visited {
+  text-decoration: none !important;
+}
+
+.md-typeset .catalogue-action:hover,
+.md-typeset .catalogue-action:focus {
+  color: var(--lupaxa-blue);
+}
+
+.md-typeset .catalogue-action .twemoji,
+.md-typeset .catalogue-action svg {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+.md-typeset .catalogue-grid > ul > li > hr:last-of-type,
+.md-typeset .catalogue-grid > li > hr:last-of-type {
+  width: 100%;
+  margin: 0.8rem 0;
+}
+
+.md-typeset .catalogue-grid > ul > li > p:last-child:not(:has(> .catalogue-category)),
+.md-typeset .catalogue-grid > li > p:last-child:not(:has(> .catalogue-category)) {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--lupaxa-spacing-md);
+  margin: 0;
+  text-align: left;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
+
+.md-typeset .catalogue-grid > ul > li > p:has(> .catalogue-category),
+.md-typeset .catalogue-grid > li > p:has(> .catalogue-category) {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: flex-start;
+  align-items: center;
+  align-self: stretch;
+  gap: var(--lupaxa-spacing-xs);
+  width: 100%;
+  margin-top: auto;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding-top: var(--lupaxa-spacing-md);
+  text-align: left;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
+
+.md-typeset .catalogue-grid > ul > li > p:has(> .catalogue-category) > .catalogue-category,
+.md-typeset .catalogue-grid > li > p:has(> .catalogue-category) > .catalogue-category {
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+.catalogue-empty-state {
+  margin: 1.5rem 0;
+  padding: 2rem 1.25rem;
+  color: var(--md-default-fg-color--light);
+  text-align: center;
+  border: 1px dashed var(--md-default-fg-color--lightest);
+  border-radius: 0.5rem;
+}
+
+.catalogue-empty-state .twemoji {
+  margin-bottom: 0.4rem;
+}
+
+.catalogue-grid > ul > li[hidden],
+.catalogue-empty-state[hidden] {
+  display: none !important;
+}
+
+/* Dark colour scheme */
+
+[data-md-color-scheme="slate"] .md-typeset .catalogue-category {
+  color: var(--lupaxa-light-blue);
+  background:
+    color-mix(
+      in srgb,
+      var(--lupaxa-light-blue) 12%,
+      transparent
+    );
+  border-color:
+    color-mix(
+      in srgb,
+      var(--lupaxa-light-blue) 30%,
+      var(--md-default-fg-color--lightest)
+    );
+}
+
+[data-md-color-scheme="slate"] .md-typeset .catalogue-category:hover {
+  color: var(--lupaxa-dark-blue);
+  background: var(--lupaxa-light-blue);
+  border-color: var(--lupaxa-light-blue);
+}
+
+/* Responsive */
+
+@media screen and (max-width: 76.234375em) {
+  .md-typeset .grid.cards.catalogue-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 44.984375em) {
+  .md-typeset .grid.cards.catalogue-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .md-typeset .catalogue-grid
+    > ul
+    > li
+    > hr:first-of-type
+    + p:not(:has(img.catalogue-logo)),
+  .md-typeset .catalogue-grid
+    > li
+    > hr:first-of-type
+    + p:not(:has(img.catalogue-logo)),
+  .md-typeset .catalogue-grid
+    p:has(img.catalogue-logo)
+    + p {
+    min-height: 0;
+  }
+
+  .md-typeset .catalogue-grid > ul > li > p:has(> .catalogue-category),
+  .md-typeset .catalogue-grid > li > p:has(> .catalogue-category) {
+    margin-top: auto;
+    padding-top: 0.75rem;
+  }
+
+  .md-typeset .catalogue-grid > ul > li > p:last-child,
+  .md-typeset .catalogue-grid > li > p:last-child {
+    flex-wrap: wrap;
+  }
+}

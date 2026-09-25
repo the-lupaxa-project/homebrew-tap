@@ -8,3 +8,17 @@
 .superpowers/
 .worktrees/
 cursor-docs
+
+# Editors
+.idea/
+.vscode/*
+!.vscode/settings.json
+
+# MkDocs
+site/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/

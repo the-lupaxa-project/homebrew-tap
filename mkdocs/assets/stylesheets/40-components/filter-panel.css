@@ -1,0 +1,839 @@
+/* =============================================================================
+ * The Lupaxa Project Portal
+ * Catalogue Filters
+ * ============================================================================= */
+
+/*
+ * Expanded layouts (collapsed = Filters + summary only):
+ *   Projects:   search
+ *               organisation | category
+ *               status | sort | clear
+ *   Articles:   search
+ *               tag | All/New | Sort | clear
+ *   Orgs:       search
+ *               category | sort | clear
+ *   Policies:   search | category | clear
+ */
+.filter-panel {
+  display: grid;
+  grid-template-columns:
+    minmax(9rem, 1.4fr)
+    minmax(7rem, 1fr)
+    minmax(7rem, 1fr)
+    minmax(7rem, 1fr)
+    auto;
+  gap: 0.75rem;
+  align-items: end;
+  margin: 0 0 1.5rem;
+  padding: 0.9rem 1rem;
+  background:
+    color-mix(
+      in srgb,
+      var(--md-default-bg-color) 96%,
+      var(--lupaxa-blue)
+    );
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.5rem;
+  box-shadow: var(--md-shadow-z1);
+}
+
+.filter-panel.filter-panel--with-sort {
+  grid-template-columns:
+    minmax(8rem, 1.2fr)
+    minmax(6.5rem, 1fr)
+    minmax(6.5rem, 1fr)
+    minmax(6.5rem, 1fr)
+    minmax(6.5rem, 1fr)
+    auto;
+}
+
+/*
+ * Projects (expanded):
+ *   search (full width)
+ *   organisation | category
+ *   status | sort | clear
+ */
+.filter-panel[data-project-filters] {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  column-gap: 1rem;
+  row-gap: 0.9rem;
+}
+
+.filter-panel[data-project-filters] > .filter-panel-toolbar,
+.filter-panel[data-project-filters] > .filter-panel-search {
+  grid-column: 1 / -1;
+}
+
+.filter-panel[data-project-filters] > .filter-panel-select:nth-child(3) {
+  grid-column: 1 / 4;
+}
+
+.filter-panel[data-project-filters] > .filter-panel-select:nth-child(4) {
+  grid-column: 4 / 7;
+}
+
+.filter-panel[data-project-filters] > .filter-panel-select:nth-child(5) {
+  grid-column: 1 / 3;
+}
+
+.filter-panel[data-project-filters] > .filter-panel-toggle {
+  grid-column: 3 / 5;
+}
+
+.filter-panel[data-project-filters] > .filter-panel-actions {
+  grid-column: 5 / 7;
+  justify-self: stretch;
+  justify-content: flex-start;
+}
+
+.filter-panel[data-project-filters] .filter-panel-clear {
+  width: 100%;
+  min-width: 0;
+}
+
+/*
+ * Formulae (expanded):
+ *   search (full width)
+ *   organisation | category | sort | clear
+ */
+.filter-panel[data-formula-filters] {
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(8rem, 1fr)
+    minmax(8rem, 1fr)
+    auto;
+  column-gap: 1rem;
+  row-gap: 0.9rem;
+}
+
+.filter-panel[data-formula-filters] > .filter-panel-toolbar,
+.filter-panel[data-formula-filters] > .filter-panel-search {
+  grid-column: 1 / -1;
+}
+
+.filter-panel[data-formula-filters] > .filter-panel-select,
+.filter-panel[data-formula-filters] > .filter-panel-toggle,
+.filter-panel[data-formula-filters] > .filter-panel-actions {
+  grid-column: auto;
+}
+
+.filter-panel[data-formula-filters] > .filter-panel-actions {
+  justify-self: stretch;
+  justify-content: flex-start;
+}
+
+.filter-panel[data-formula-filters] .filter-panel-clear {
+  width: 100%;
+  min-width: 0;
+}
+
+/*
+ * Articles (expanded):
+ *   search (full width)
+ *   tag | All/New | Sort | clear
+ */
+.filter-panel[data-article-filters] {
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(8rem, 1fr)
+    minmax(8rem, 1fr)
+    auto;
+  column-gap: 1rem;
+  row-gap: 0.9rem;
+}
+
+.filter-panel[data-article-filters] > .filter-panel-toolbar,
+.filter-panel[data-article-filters] > .filter-panel-search {
+  grid-column: 1 / -1;
+}
+
+.filter-panel[data-article-filters] > .filter-panel-select,
+.filter-panel[data-article-filters] > .filter-panel-toggle,
+.filter-panel[data-article-filters] > .filter-panel-actions {
+  grid-column: auto;
+}
+
+.filter-panel[data-article-filters] > .filter-panel-actions {
+  justify-self: stretch;
+  justify-content: flex-start;
+}
+
+.filter-panel[data-article-filters] .filter-panel-clear {
+  width: 100%;
+  min-width: 0;
+}
+
+.filter-panel-toolbar {
+  display: flex;
+  grid-column: 1 / -1;
+  flex-wrap: nowrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 0;
+}
+
+.filter-panel-toolbar .filter-panel-summary,
+.md-typeset .filter-panel-toolbar .filter-panel-summary {
+  grid-column: auto;
+  flex: 1 1 auto;
+  justify-self: unset;
+  width: auto;
+  min-width: 0;
+  margin-top: 0;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*
+ * Beat Material `.md-typeset .md-button { display: inline-block }` so the
+ * icon + label flex row can vertically center on every catalogue page.
+ */
+.md-typeset .md-button.filter-panel-expand,
+.filter-panel-expand {
+  display: inline-flex;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  gap: 0.4rem;
+  min-width: 9.5rem;
+  min-height: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.42rem 0.85rem;
+  font-size: 0.82rem;
+  line-height: 1;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.filter-panel-expand__icon {
+  display: none;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: 1em;
+  height: 1em;
+  line-height: 0;
+}
+
+.filter-panel-expand__icon--show {
+  display: inline-flex;
+}
+
+.filter-panel--expanded .filter-panel-expand__icon--show {
+  display: none;
+}
+
+.filter-panel--expanded .filter-panel-expand__icon--hide {
+  display: inline-flex;
+}
+
+.filter-panel-expand__icon svg {
+  display: block;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
+.filter-panel-expand__label {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.filter-panel.filter-panel--compact {
+  grid-template-columns:
+    minmax(12rem, 1.6fr)
+    minmax(10rem, 1fr)
+    auto;
+}
+
+.filter-panel.filter-panel--compact:has(
+  .filter-panel-select + .filter-panel-select
+) {
+  grid-template-columns:
+    minmax(10rem, 1.4fr)
+    minmax(8rem, 1fr)
+    minmax(8rem, 1fr)
+    auto;
+}
+
+/*
+ * Policies (expanded):
+ *   search | category | clear
+ */
+.filter-panel[data-policy-filters] {
+  grid-template-columns:
+    minmax(12rem, 1.6fr)
+    minmax(10rem, 1fr)
+    auto;
+  column-gap: 1rem;
+  row-gap: 0.9rem;
+}
+
+.filter-panel[data-policy-filters] > .filter-panel-toolbar {
+  grid-column: 1 / -1;
+}
+
+.filter-panel[data-policy-filters] > .filter-panel-search,
+.filter-panel[data-policy-filters] > .filter-panel-select,
+.filter-panel[data-policy-filters] > .filter-panel-actions {
+  grid-column: auto;
+}
+
+.filter-panel[data-policy-filters] > .filter-panel-actions {
+  justify-self: stretch;
+  justify-content: flex-start;
+}
+
+/*
+ * Organisations (expanded):
+ *   search (full width)
+ *   category | sort | clear
+ */
+.filter-panel[data-organisation-filters] {
+  grid-template-columns:
+    minmax(0, 1.2fr)
+    minmax(10rem, 1fr)
+    auto;
+  column-gap: 1rem;
+  row-gap: 0.9rem;
+}
+
+.filter-panel[data-organisation-filters] > .filter-panel-toolbar,
+.filter-panel[data-organisation-filters] > .filter-panel-search {
+  grid-column: 1 / -1;
+}
+
+.filter-panel[data-organisation-filters] > .filter-panel-select,
+.filter-panel[data-organisation-filters] > .filter-panel-toggle,
+.filter-panel[data-organisation-filters] > .filter-panel-actions {
+  grid-column: auto;
+}
+
+.filter-panel[data-organisation-filters] > .filter-panel-actions {
+  justify-self: stretch;
+  justify-content: flex-start;
+}
+
+.filter-panel:not(.filter-panel--expanded) > .filter-panel-search,
+.filter-panel:not(.filter-panel--expanded) > .filter-panel-select,
+.filter-panel:not(.filter-panel--expanded) > .filter-panel-toggle,
+.filter-panel:not(.filter-panel--expanded) > .filter-panel-actions {
+  display: none;
+}
+
+/* Collapsed: only the toolbar row (Filters + Showing X) */
+.filter-panel:not(.filter-panel--expanded),
+.filter-panel.filter-panel--with-sort:not(.filter-panel--expanded),
+.filter-panel.filter-panel--compact:not(.filter-panel--expanded),
+.filter-panel[data-project-filters]:not(.filter-panel--expanded),
+.filter-panel[data-article-filters]:not(.filter-panel--expanded),
+.filter-panel[data-organisation-filters]:not(.filter-panel--expanded),
+.filter-panel[data-policy-filters]:not(.filter-panel--expanded) {
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+}
+
+article.md-content__inner:has(> .filter-panel:first-child)::before {
+  content: "";
+  display: block;
+  height: 1.5rem;
+}
+
+.filter-panel-search,
+.filter-panel-select,
+.filter-panel-toggle {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+/*
+ * Segmented toggle column (Status All|New, Sort A–Z|Newest) — same
+ * footprint as a filter-panel-select.
+ */
+.filter-panel-toggle__options {
+  display: flex;
+  width: 100%;
+  min-height: 2.25rem;
+}
+
+.filter-panel-toggle__option {
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: 1 1 0;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 2.25rem;
+  height: 2.25rem;
+  padding: 0 0.45rem;
+  color: var(--md-default-fg-color);
+  font: inherit;
+  font-size: 0.82rem;
+  line-height: 1;
+  white-space: nowrap;
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  cursor: pointer;
+  appearance: none;
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    background-color 150ms ease,
+    color 150ms ease;
+}
+
+.filter-panel-toggle__option:first-child {
+  border-radius: 0.3rem 0 0 0.3rem;
+}
+
+.filter-panel-toggle__option + .filter-panel-toggle__option {
+  margin-left: -1px;
+}
+
+.filter-panel-toggle__option:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+
+.filter-panel-toggle__option:last-child {
+  border-radius: 0 0.3rem 0.3rem 0;
+}
+
+.filter-panel-toggle__option:hover {
+  z-index: 1;
+  border-color: var(--lupaxa-light-blue);
+}
+
+.filter-panel-toggle__option:focus-visible {
+  z-index: 1;
+  border-color: var(--lupaxa-light-blue);
+  outline: none;
+  box-shadow:
+    0 0 0 0.12rem
+    color-mix(
+      in srgb,
+      var(--lupaxa-light-blue) 24%,
+      transparent
+    );
+}
+
+.filter-panel-toggle__option[aria-pressed="true"] {
+  z-index: 1;
+  color: var(--lupaxa-white);
+  background: var(--lupaxa-blue);
+  border-color: var(--lupaxa-blue);
+}
+
+/* Beat Material .md-typeset button defaults */
+.md-typeset .filter-panel-toggle__option {
+  margin: 0;
+  max-height: 2.25rem;
+  text-align: center;
+}
+
+.filter-panel label {
+  color: var(--md-default-fg-color);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  line-height: 1.2;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.filter-panel input,
+.filter-panel select {
+  width: 100%;
+  min-width: 0;
+  min-height: 2.25rem;
+  padding: 0.42rem 0.65rem;
+  color: var(--md-default-fg-color);
+  font: inherit;
+  font-size: 0.82rem;
+  line-height: 1.3;
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.3rem;
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    background-color 150ms ease;
+}
+
+.filter-panel input::placeholder {
+  color: var(--md-default-fg-color--light);
+  opacity: 0.75;
+}
+
+.filter-panel input:hover,
+.filter-panel select:hover {
+  border-color: var(--lupaxa-light-blue);
+}
+
+.filter-panel input:focus,
+.filter-panel select:focus {
+  border-color: var(--lupaxa-light-blue);
+  outline: none;
+  box-shadow:
+    0 0 0 0.12rem
+    color-mix(
+      in srgb,
+      var(--lupaxa-light-blue) 24%,
+      transparent
+    );
+}
+
+.filter-panel-actions {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+/*
+ * Visual styles (colour, hover, active, disabled) are shared with
+ * .md-button.lupaxa-button in buttons.css. Layout-specific sizing stays here.
+ */
+.filter-panel-clear {
+  display: inline-flex;
+  box-sizing: border-box;
+  min-width: 8.5rem;
+  min-height: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.42rem 0.85rem;
+  font-size: 0.82rem;
+  line-height: 1.3;
+  white-space: nowrap;
+  transition:
+    color var(--lupaxa-transition-fast),
+    background-color var(--lupaxa-transition-fast),
+    border-color var(--lupaxa-transition-fast),
+    transform var(--lupaxa-transition-fast);
+}
+
+.filter-panel-summary {
+  box-sizing: border-box;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.74rem;
+  line-height: 1.3;
+  text-align: right;
+}
+
+/* Summary lives in the toolbar — keep it on the Filters row */
+.md-typeset .filter-panel .filter-panel-toolbar .filter-panel-summary,
+.md-typeset
+  .filter-panel.filter-panel--compact
+  .filter-panel-toolbar
+  .filter-panel-summary,
+.filter-panel-toolbar .filter-panel-summary {
+  grid-column: auto;
+  flex: 1 1 auto;
+  width: auto;
+  min-width: 0;
+  margin-top: 0;
+  text-align: right;
+}
+
+[data-md-color-scheme="slate"] .filter-panel {
+  background:
+    color-mix(
+      in srgb,
+      var(--md-default-bg-color) 94%,
+      var(--lupaxa-light-blue)
+    );
+}
+
+/* =============================================================================
+ * Responsive — aligned with site breakpoints in 90-responsive.css
+ *
+ * Breakpoints (16px root):
+ *   ≤76.234375em (~1220px)  tablet / laptop narrow — keep desktop row plans
+ *   ≤59.984375em (~960px)   tablet portrait — tighten crowded rows
+ *   ≤44.984375em (~720px)   mobile — full stack
+ *
+ * Prefer [data-*-filters] so catalogue rules don’t fight each other.
+ * ============================================================================= */
+
+/* Shared: Clear stretches in multi-control rows */
+.filter-panel[data-project-filters] .filter-panel-clear,
+.filter-panel[data-article-filters] .filter-panel-clear,
+.filter-panel[data-organisation-filters] .filter-panel-clear,
+.filter-panel[data-policy-filters] .filter-panel-clear {
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+}
+
+/*
+ * Tablet / laptop narrow (~1220px): same expanded layouts as desktop.
+ * (Desktop rules above already use full-width search + control rows.)
+ */
+@media screen and (max-width: 76.234375em) {
+  .filter-panel-summary {
+    text-align: right;
+  }
+
+  /* Collapsed: only toolbar */
+  .filter-panel:not(.filter-panel--expanded),
+  .filter-panel.filter-panel--with-sort:not(.filter-panel--expanded),
+  .filter-panel.filter-panel--compact:not(.filter-panel--expanded),
+  .filter-panel[data-project-filters]:not(.filter-panel--expanded),
+  .filter-panel[data-article-filters]:not(.filter-panel--expanded),
+  .filter-panel[data-organisation-filters]:not(.filter-panel--expanded),
+  .filter-panel[data-policy-filters]:not(.filter-panel--expanded) {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: center;
+  }
+}
+
+/*
+ * Tablet portrait (~960px):
+ *   Projects:      search / org|category / status|sort|clear  (unchanged)
+ *   Articles:      search / tag|All-New / Sort|Clear
+ *   Organisations: search / category|sort / clear
+ *   Policies:      search / category | clear
+ */
+@media screen and (max-width: 59.984375em) {
+  /* --- Projects: keep 3-row plan --- */
+  .filter-panel[data-project-filters] {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    column-gap: 0.85rem;
+    row-gap: 0.85rem;
+  }
+
+  .filter-panel[data-project-filters] > .filter-panel-toolbar,
+  .filter-panel[data-project-filters] > .filter-panel-search {
+    grid-column: 1 / -1;
+  }
+
+  .filter-panel[data-project-filters] > .filter-panel-select:nth-child(3) {
+    grid-column: 1 / 4;
+  }
+
+  .filter-panel[data-project-filters] > .filter-panel-select:nth-child(4) {
+    grid-column: 4 / 7;
+  }
+
+  .filter-panel[data-project-filters] > .filter-panel-select:nth-child(5) {
+    grid-column: 1 / 3;
+  }
+
+  .filter-panel[data-project-filters] > .filter-panel-toggle {
+    grid-column: 3 / 5;
+  }
+
+  .filter-panel[data-project-filters] > .filter-panel-actions {
+    grid-column: 5 / 7;
+    justify-self: stretch;
+    justify-content: flex-start;
+  }
+
+  /* Formulae: organisation | category / sort | clear */
+  .filter-panel[data-formula-filters] {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 0.85rem;
+    row-gap: 0.85rem;
+  }
+
+  .filter-panel[data-formula-filters] > .filter-panel-toolbar,
+  .filter-panel[data-formula-filters] > .filter-panel-search {
+    grid-column: 1 / -1;
+  }
+
+  .filter-panel[data-formula-filters] > .filter-panel-select,
+  .filter-panel[data-formula-filters] > .filter-panel-toggle,
+  .filter-panel[data-formula-filters] > .filter-panel-actions {
+    grid-column: auto;
+  }
+
+  /* --- Articles: search; tag | view; sort | clear --- */
+  .filter-panel[data-article-filters] {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 0.85rem;
+    row-gap: 0.85rem;
+  }
+
+  .filter-panel[data-article-filters] > .filter-panel-toolbar,
+  .filter-panel[data-article-filters] > .filter-panel-search {
+    grid-column: 1 / -1;
+  }
+
+  .filter-panel[data-article-filters] > .filter-panel-select,
+  .filter-panel[data-article-filters] > .filter-panel-toggle,
+  .filter-panel[data-article-filters] > .filter-panel-actions {
+    grid-column: auto;
+  }
+
+  .filter-panel[data-article-filters] > .filter-panel-actions {
+    justify-self: stretch;
+    justify-content: flex-start;
+  }
+
+  /* --- Organisations: search; category | sort; clear --- */
+  .filter-panel[data-organisation-filters] {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 0.85rem;
+    row-gap: 0.85rem;
+  }
+
+  .filter-panel[data-organisation-filters] > .filter-panel-toolbar,
+  .filter-panel[data-organisation-filters] > .filter-panel-search {
+    grid-column: 1 / -1;
+  }
+
+  .filter-panel[data-organisation-filters] > .filter-panel-select,
+  .filter-panel[data-organisation-filters] > .filter-panel-toggle {
+    grid-column: auto;
+  }
+
+  .filter-panel[data-organisation-filters] > .filter-panel-actions {
+    grid-column: 1 / -1;
+    justify-self: stretch;
+    justify-content: flex-start;
+  }
+
+  /* --- Policies: search; category | clear --- */
+  .filter-panel[data-policy-filters] {
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 0.85rem;
+    row-gap: 0.85rem;
+  }
+
+  .filter-panel[data-policy-filters] > .filter-panel-toolbar,
+  .filter-panel[data-policy-filters] > .filter-panel-search {
+    grid-column: 1 / -1;
+  }
+
+  .filter-panel[data-policy-filters] > .filter-panel-select,
+  .filter-panel[data-policy-filters] > .filter-panel-actions {
+    grid-column: auto;
+  }
+
+  .filter-panel[data-policy-filters] > .filter-panel-actions {
+    justify-self: stretch;
+    justify-content: flex-start;
+  }
+
+  /* Collapsed: only toolbar */
+  .filter-panel:not(.filter-panel--expanded),
+  .filter-panel.filter-panel--with-sort:not(.filter-panel--expanded),
+  .filter-panel.filter-panel--compact:not(.filter-panel--expanded),
+  .filter-panel[data-project-filters]:not(.filter-panel--expanded),
+  .filter-panel[data-article-filters]:not(.filter-panel--expanded),
+  .filter-panel[data-organisation-filters]:not(.filter-panel--expanded),
+  .filter-panel[data-policy-filters]:not(.filter-panel--expanded) {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: center;
+  }
+}
+
+/*
+ * Mobile (~720px): every catalogue stacks — one control per row.
+ * Toolbar keeps Filters + Showing X on one row.
+ */
+@media screen and (max-width: 44.984375em) {
+  .filter-panel,
+  .filter-panel.filter-panel--with-sort,
+  .filter-panel.filter-panel--compact,
+  .filter-panel[data-project-filters],
+  .filter-panel[data-article-filters],
+  .filter-panel[data-organisation-filters],
+  .filter-panel[data-policy-filters] {
+    grid-template-columns: minmax(0, 1fr);
+    column-gap: 0.7rem;
+    row-gap: 0.7rem;
+    gap: 0.7rem;
+    padding: 0.85rem;
+  }
+
+  .filter-panel > .filter-panel-toolbar,
+  .filter-panel > .filter-panel-search,
+  .filter-panel > .filter-panel-select,
+  .filter-panel > .filter-panel-toggle,
+  .filter-panel > .filter-panel-actions,
+  .filter-panel[data-project-filters] > .filter-panel-select:nth-child(3),
+  .filter-panel[data-project-filters] > .filter-panel-select:nth-child(4),
+  .filter-panel[data-project-filters] > .filter-panel-select:nth-child(5),
+  .filter-panel[data-project-filters] > .filter-panel-toggle,
+  .filter-panel[data-project-filters] > .filter-panel-actions,
+  .filter-panel[data-formula-filters] > .filter-panel-select,
+  .filter-panel[data-formula-filters] > .filter-panel-toggle,
+  .filter-panel[data-formula-filters] > .filter-panel-actions,
+  .filter-panel[data-article-filters] > .filter-panel-select,
+  .filter-panel[data-article-filters] > .filter-panel-toggle,
+  .filter-panel[data-article-filters] > .filter-panel-actions,
+  .filter-panel[data-organisation-filters] > .filter-panel-select,
+  .filter-panel[data-organisation-filters] > .filter-panel-toggle,
+  .filter-panel[data-organisation-filters] > .filter-panel-actions,
+  .filter-panel[data-policy-filters] > .filter-panel-select,
+  .filter-panel[data-policy-filters] > .filter-panel-toggle,
+  .filter-panel[data-policy-filters] > .filter-panel-actions {
+    grid-column: 1 / -1;
+    justify-self: stretch;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .filter-panel-expand {
+    width: auto;
+    min-width: 9.5rem;
+  }
+
+  .filter-panel > .filter-panel-actions {
+    /*
+     * Reserve the same vertical slot as a field label + gap so Clear
+     * isn’t tighter to the control above than Category/Status/etc.
+     */
+    justify-content: flex-start;
+    padding-top: calc(0.68rem * 1.2 + 0.3rem);
+  }
+
+  .md-typeset .filter-panel .md-button.filter-panel-clear,
+  .md-typeset .filter-panel .filter-panel-clear,
+  .filter-panel-clear {
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .filter-panel-toggle__options {
+    width: 100%;
+  }
+
+  .filter-panel-toggle__option {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0 0.3rem;
+    font-size: 0.78rem;
+  }
+
+  .filter-panel-toolbar .filter-panel-summary,
+  .md-typeset .filter-panel-toolbar .filter-panel-summary {
+    margin-top: 0;
+    text-align: right;
+  }
+
+  /* Collapsed: only toolbar */
+  .filter-panel:not(.filter-panel--expanded),
+  .filter-panel.filter-panel--with-sort:not(.filter-panel--expanded),
+  .filter-panel.filter-panel--compact:not(.filter-panel--expanded),
+  .filter-panel[data-project-filters]:not(.filter-panel--expanded),
+  .filter-panel[data-article-filters]:not(.filter-panel--expanded),
+  .filter-panel[data-organisation-filters]:not(.filter-panel--expanded),
+  .filter-panel[data-policy-filters]:not(.filter-panel--expanded) {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: center;
+  }
+
+  .filter-panel:not(.filter-panel--expanded) > .filter-panel-actions {
+    padding-top: 0;
+  }
+}

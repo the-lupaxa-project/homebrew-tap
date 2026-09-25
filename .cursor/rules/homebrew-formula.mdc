@@ -15,3 +15,4 @@ One formula file is one tagged release of one tool repo.
 - Deleting a formula uses `lupaxa-delete-tap`.
 - Moving a formula’s tag uses `lupaxa-update-tap`.
 - Adding a formula uses `lupaxa-add-tap` and still refuses to overwrite an existing file.
+- Formulae page cards live in `data/formulae.yml`. The version banner is the tag in the formula `url`, not a field in that file. `publish_date` is when the tool repository was created. `released_date` is when that tag was published. Both are written by add and update, not looked up at site build.

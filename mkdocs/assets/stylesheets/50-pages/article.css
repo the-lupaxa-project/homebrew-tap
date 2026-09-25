@@ -1,0 +1,319 @@
+/* =============================================================================
+ * Individual article pages — reading layout
+ * Scoped via .lupaxa-article-page on the content article element.
+ * ============================================================================= */
+
+.md-typeset.lupaxa-article-page {
+  max-width: var(--lupaxa-content-width);
+  margin-inline: auto;
+  padding-top: var(--lupaxa-spacing-md);
+  font-size: 0.92rem;
+}
+
+.md-typeset .lupaxa-article-card {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 2rem 2.4rem 2.25rem;
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(
+        in srgb,
+        var(--md-default-bg-color) 96%,
+        var(--lupaxa-blue)
+      ),
+      var(--md-default-bg-color)
+    );
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: var(--lupaxa-radius-card);
+  box-shadow: var(--lupaxa-shadow-card);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .lupaxa-article-card {
+  box-shadow:
+    0 0.1rem 0.4rem rgb(0 0 0 / 15%),
+    0 0.4rem 1.2rem rgb(0 0 0 / 12%);
+}
+
+/* Title */
+
+.md-typeset.lupaxa-article-page .lupaxa-article-card > h1:first-of-type {
+  margin-top: 0;
+  margin-bottom: 1.35rem;
+  padding-left: 0;
+  color: var(--md-default-fg-color);
+  font-size: clamp(1.55rem, 2.4vw, 1.95rem);
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  border-left: none;
+}
+
+.md-typeset.lupaxa-article-page .lupaxa-article-card > h1:first-of-type .article-title-sub {
+  display: block;
+  margin-top: 0.4em;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.82em;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
+
+/* Opening paragraphs — slightly more air before the first section */
+
+.md-typeset.lupaxa-article-page .lupaxa-article-card > h1:first-of-type + p,
+.md-typeset.lupaxa-article-page .lupaxa-article-card > h1:first-of-type + p + p {
+  color: var(--md-default-fg-color--light);
+}
+
+.md-typeset.lupaxa-article-page p {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+}
+
+/* Sections */
+
+.md-typeset.lupaxa-article-page h2 {
+  margin-top: 2.4rem;
+  margin-bottom: 0.85rem;
+  color: var(--md-default-fg-color);
+  font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+  font-weight: 650;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+
+.md-typeset.lupaxa-article-page h2:first-of-type {
+  margin-top: 2rem;
+}
+
+.md-typeset.lupaxa-article-page h3 {
+  margin-top: 1.65rem;
+  margin-bottom: 0.55rem;
+  color: var(--md-default-fg-color);
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.md-typeset.lupaxa-article-page h4 {
+  margin-top: 1.35rem;
+  margin-bottom: 0.45rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Lists */
+
+.md-typeset.lupaxa-article-page ul,
+.md-typeset.lupaxa-article-page ol {
+  margin: 0 0 1.25em;
+  padding-left: 1.35em;
+}
+
+.md-typeset.lupaxa-article-page li {
+  margin-bottom: 0.45em;
+}
+
+.md-typeset.lupaxa-article-page li:last-child {
+  margin-bottom: 0;
+}
+
+.md-typeset.lupaxa-article-page li > p {
+  margin-bottom: 0.45em;
+}
+
+.md-typeset.lupaxa-article-page ul ul,
+.md-typeset.lupaxa-article-page ol ol,
+.md-typeset.lupaxa-article-page ul ol,
+.md-typeset.lupaxa-article-page ol ul {
+  margin: 0.4em 0 0.55em;
+}
+
+/* Inline code */
+
+.md-typeset.lupaxa-article-page code {
+  padding: 0.12em 0.38em;
+  color: var(--md-code-fg-color);
+  font-size: 0.86em;
+  background: var(--md-code-bg-color);
+  border: 1px solid
+    color-mix(in srgb, var(--lupaxa-blue) 12%, transparent);
+  border-radius: var(--lupaxa-radius-sm);
+  box-shadow: none;
+}
+
+.md-typeset.lupaxa-article-page pre code {
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Code blocks. Padding lives on the code element, which is what sets the
+   window height. A single line must stay taller than the copy button. */
+
+.md-typeset.lupaxa-article-page pre,
+.md-typeset.lupaxa-article-page .highlight {
+  margin: 1.35em 0;
+}
+
+.md-typeset.lupaxa-article-page .highlight > pre {
+  background-color: var(--md-code-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: var(--lupaxa-radius-sm);
+  box-shadow: var(--lupaxa-shadow-panel);
+}
+
+.md-typeset.lupaxa-article-page pre > code {
+  padding: 1.05em 3.6em 1.05em 1.4em;
+}
+
+/* Tables */
+
+.md-typeset.lupaxa-article-page table:not([class]) {
+  display: table;
+  width: 100%;
+  max-width: 100%;
+  margin: 1.5em 0;
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.md-typeset.lupaxa-article-page table:not([class]) td,
+.md-typeset.lupaxa-article-page table:not([class]) th {
+  padding: 0.7em 0.95em;
+}
+
+/* Emphasis */
+
+.md-typeset.lupaxa-article-page strong {
+  font-weight: 650;
+}
+
+.md-typeset.lupaxa-article-page em {
+  color: var(--md-default-fg-color--light);
+}
+
+/* Horizontal rules / section breaks */
+
+.md-typeset.lupaxa-article-page hr {
+  margin: 2.25rem 0;
+  border: 0;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+
+/* Dark mode — keep silver accents readable */
+
+[data-md-color-scheme="slate"] .md-typeset.lupaxa-article-page .lupaxa-article-card > h1:first-of-type + p,
+[data-md-color-scheme="slate"] .md-typeset.lupaxa-article-page .lupaxa-article-card > h1:first-of-type + p + p {
+  color: var(--md-default-fg-color--light);
+}
+
+@media screen and (max-width: 76.234375em) {
+  .md-typeset.lupaxa-article-page {
+    padding-inline: var(--lupaxa-spacing-md);
+  }
+}
+
+@media screen and (max-width: 44.984375em) {
+  .md-typeset.lupaxa-article-page {
+    padding-inline: var(--lupaxa-spacing-md);
+    font-size: 0.9rem;
+  }
+
+  .md-typeset .lupaxa-article-card {
+    padding: 1.4rem 1.25rem 1.6rem;
+  }
+}
+
+/* Previous / next article pager */
+
+.md-typeset .lupaxa-article-pager {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--lupaxa-spacing-md);
+  margin-top: 2.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset .lupaxa-article-pager__prev,
+.md-typeset .lupaxa-article-pager__next {
+  min-width: 0;
+}
+
+.md-typeset .lupaxa-article-pager__next {
+  text-align: right;
+}
+
+.md-typeset .lupaxa-article-pager__link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.md-typeset .lupaxa-article-pager__link:hover,
+.md-typeset .lupaxa-article-pager__link:focus-visible {
+  color: inherit;
+  text-decoration: none;
+}
+
+.md-typeset .lupaxa-article-pager__label {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.md-typeset .lupaxa-article-pager__title {
+  color: var(--md-default-fg-color);
+  font-size: 0.95rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.md-typeset .lupaxa-article-pager__link:hover .lupaxa-article-pager__title,
+.md-typeset .lupaxa-article-pager__link:focus-visible .lupaxa-article-pager__title {
+  color: var(--lupaxa-blue);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .lupaxa-article-pager__link:hover .lupaxa-article-pager__title,
+[data-md-color-scheme="slate"] .md-typeset .lupaxa-article-pager__link:focus-visible .lupaxa-article-pager__title {
+  color: var(--lupaxa-light-blue);
+}
+
+@media screen and (max-width: 44.984375em) {
+  .md-typeset .lupaxa-article-pager {
+    grid-template-columns: 1fr;
+    gap: var(--lupaxa-spacing-sm);
+  }
+
+  .md-typeset .lupaxa-article-pager__prev,
+  .md-typeset .lupaxa-article-pager__next {
+    text-align: center;
+  }
+
+  .md-typeset .lupaxa-article-pager__link {
+    align-items: center;
+  }
+
+  .md-typeset .lupaxa-article-pager__prev:empty {
+    display: none;
+  }
+}
+
+
+.md-typeset.lupaxa-article-page table:not([class]) th {
+  background-color: var(--lupaxa-blue);
+  color: var(--lupaxa-white);
+  border-color: color-mix(in srgb, var(--lupaxa-blue) 85%, var(--lupaxa-white));
+}

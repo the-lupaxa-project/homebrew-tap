@@ -1,0 +1,97 @@
+# Formulae page cards, alphabetical by name.
+# The version banner is the tag in Formula/<name>.rb.
+# publish_date is when the tool repository was created.
+# released_date is when the formula tag was published.
+- name: brew-manager
+  title: Brew Manager
+  organisation: Workstation Toolbox
+  logo: assets/images/brand/organisation-workstation-toolbox-logo.png
+  description: >-
+    Interactive Homebrew maintenance menu for workstation brew state. Run
+    common `brew` operations from a numbered menu — updates, upgrades,
+    cleanup, doctor, installed package lists, and helpers for deprecated or
+    disabled casks — with confirmation prompts before destructive actions.
+  categories:
+    - Homebrew
+    - Package Management
+    - Workstation
+  repository: https://github.com/lupaxa-workstation-toolbox/brew-manager
+  documentation: https://brew-manager.thelupaxaproject.org/
+  publish_date: "2026-08-01T09:46:31"
+  released_date: "2026-09-24T13:27:41"
+
+- name: check-git-repositories
+  title: Check Git Repositories
+  organisation: Git Toolbox
+  logo: assets/images/brand/organisation-git-toolbox-logo.png
+  description: >-
+    Scan a directory tree for Git repositories and report anything that is
+    not fully clean and synced with its upstream — uncommitted work, unpushed
+    commits, stashes, and sync drift. A single portable Bash script that
+    needs only bash, find, and git. Useful as an end-of-day check across a
+    workspace full of clones.
+  categories:
+    - Git
+    - Automation
+    - Repository Management
+    - CLI
+  repository: https://github.com/lupaxa-git-toolbox/check-git-repositories
+  documentation: https://check-git-repositories.thelupaxaproject.org/
+  publish_date: "2026-08-01T09:51:27"
+  released_date: "2026-09-24T16:53:18"
+
+- name: git-crypt-manager
+  title: Git Crypt Manager
+  organisation: Security Toolbox
+  logo: assets/images/brand/organisation-security-toolbox-logo.png
+  description: >-
+    Simplify the management of encrypted Git repositories with a guided
+    automation tool built around
+    [git-crypt](https://github.com/AGWA/git-crypt). The project helps
+    initialise, configure, and maintain encrypted repositories while reducing
+    the complexity of day-to-day key management.
+  categories:
+    - Encryption
+    - Security
+    - Git
+    - Automation
+  repository: https://github.com/lupaxa-security-toolbox/git-crypt-manager
+  documentation: https://git-crypt-manager.thelupaxaproject.org/
+  publish_date: "2025-11-27T22:26:41"
+  released_date: "2026-09-23T10:06:58"
+
+- name: git-delete-tags
+  title: Git Delete Tags
+  organisation: Git Toolbox
+  logo: assets/images/brand/organisation-git-toolbox-logo.png
+  description: >-
+    Delete local and remote Git tags with dry-run, summary, and protection.
+    Remove specific tags or clear every tag in a repository while protecting
+    selected names. Useful for cleaning up stale release tags or resetting a
+    tag namespace before a fresh release cycle.
+  categories:
+    - Git
+    - Automation
+    - Repository Management
+    - CLI
+  repository: https://github.com/lupaxa-git-toolbox/git-delete-tags
+  publish_date: "2026-08-01T09:50:38"
+  released_date: "2026-09-24T16:56:31"
+
+- name: git-reset-history
+  title: Git Reset History
+  organisation: Git Toolbox
+  logo: assets/images/brand/organisation-git-toolbox-logo.png
+  description: >-
+    Rewrite a Git repository down to a single initial commit — with dry-run,
+    backups, and controlled tag handling. Keeps the current tree while
+    replacing primary-branch history. Useful after scaffolding, before a
+    first public release, or when history is no longer useful.
+  categories:
+    - Automation
+    - CLI
+    - Git
+    - Repository Management
+  repository: https://github.com/lupaxa-git-toolbox/git-reset-history
+  publish_date: "2026-08-01T09:49:14"
+  released_date: "2026-09-24T16:56:45"

@@ -1,13 +1,8 @@
-<p align="center">
-    <a href="https://github.com/the-lupaxa-project">
-        <img src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-project/readme-logo.png" alt="Organisation Logo" />
-    </a>
-</p>
+# Usage
 
-<h1 align="center">Homebrew Tap</h1>
-
-Homebrew formulae for The Lupaxa Project tools. One formula points at one
-tagged release of that tool's own repository.
+This tap publishes one Homebrew formula for each tagged Lupaxa Project tool. Add the
+tap, install what you need, then use the commands below to list, update, and
+remove formulae. Worked examples follow. The full command list is at the end.
 
 ## Setup
 
@@ -146,19 +141,3 @@ That removes the tap. Formulae you already installed stay installed.
 | `brew upgrade <formula>`               | Upgrade one installed formula                       |
 | `brew uninstall <formula>`             | Remove one installed formula                        |
 | `brew untap the-lupaxa-project/tap`    | Remove the tap                                      |
-
-## Documentation
-
-The published guide is at
-<https://homebrew-tap.thelupaxaproject.org/>.
-
-Site Markdown lives in `mkdocs/`.
-
-```bash
-python -m pip install -r requirements.txt
-python -m mkdocs build --strict
-```
-
-<a href="https://github.com/the-lupaxa-project">
-    <img src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/components/footer.svg" alt="The Lupaxa Project Footer" width="100%" />
-</a>
