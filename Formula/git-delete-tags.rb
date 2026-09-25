@@ -1,8 +1,8 @@
 class GitDeleteTags < Formula
   desc "Bash CLI to delete local and remote Git tags, with protection, dry-run, and summary modes"
   homepage "https://github.com/lupaxa-git-toolbox/git-delete-tags"
-  url "https://github.com/lupaxa-git-toolbox/git-delete-tags/archive/refs/tags/v0.1.4.tar.gz"
-  sha256 "6ebd323e961467d4f33bd8a2a3ed9ab771b8d43c654ea6252a23a656a5cf0bb8"
+  url "https://github.com/lupaxa-git-toolbox/git-delete-tags/archive/refs/tags/v0.1.5.tar.gz"
+  sha256 "b331d88de72196d92df1536bf8174654957c5d2f56e341483929033868c7bef3"
   license "MIT"
 
   def install

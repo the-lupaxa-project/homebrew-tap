@@ -18,7 +18,7 @@
   repository: https://github.com/lupaxa-workstation-toolbox/brew-manager
   documentation: https://brew-manager.thelupaxaproject.org/
   publish_date: "2026-08-01T09:46:31"
-  released_date: "2026-09-24T13:27:41"
+  released_date: "2026-09-25T11:34:07"
 
 - name: check-git-repositories
   title: Check Git Repositories
@@ -38,7 +38,7 @@
   repository: https://github.com/lupaxa-git-toolbox/check-git-repositories
   documentation: https://check-git-repositories.thelupaxaproject.org/
   publish_date: "2026-08-01T09:51:27"
-  released_date: "2026-09-24T16:53:18"
+  released_date: "2026-09-25T11:36:59"
 
 - name: git-crypt-manager
   title: Git Crypt Manager
@@ -58,7 +58,7 @@
   repository: https://github.com/lupaxa-security-toolbox/git-crypt-manager
   documentation: https://git-crypt-manager.thelupaxaproject.org/
   publish_date: "2025-11-27T22:26:41"
-  released_date: "2026-09-23T10:06:58"
+  released_date: "2026-09-25T11:35:29"
 
 - name: git-delete-tags
   title: Git Delete Tags
@@ -76,7 +76,7 @@
     - CLI
   repository: https://github.com/lupaxa-git-toolbox/git-delete-tags
   publish_date: "2026-08-01T09:50:38"
-  released_date: "2026-09-24T16:56:31"
+  released_date: "2026-09-25T11:38:16"
 
 - name: git-reset-history
   title: Git Reset History
@@ -94,4 +94,4 @@
     - Repository Management
   repository: https://github.com/lupaxa-git-toolbox/git-reset-history
   publish_date: "2026-08-01T09:49:14"
-  released_date: "2026-09-24T16:56:45"
+  released_date: "2026-09-25T11:40:03"
