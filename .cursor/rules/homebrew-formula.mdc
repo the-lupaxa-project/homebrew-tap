@@ -1,0 +1,17 @@
+---
+description: Homebrew formula shape for this tap
+globs: Formula/*.rb
+alwaysApply: false
+---
+
+# Homebrew formula
+
+One formula file is one tagged release of one tool repo.
+
+- `url` is `https://github.com/OWNER/REPO/archive/refs/tags/vX.Y.Z.tar.gz`
+- `sha256` is the digest of that tarball
+- Class name is the repo name in CamelCase (`brew-manager` → `BrewManager`)
+- Install is one of: `bin.install "src/<repo>"`, pip install of a single console script, or `go build` with `std_go_args` for a single `main` package
+- Deleting a formula uses `lupaxa-delete-tap`.
+- Moving a formula’s tag uses `lupaxa-update-tap`.
+- Adding a formula uses `lupaxa-add-tap` and still refuses to overwrite an existing file.
