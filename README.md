@@ -39,3 +39,24 @@ formulae you already have:
 ```bash
 brew upgrade
 ```
+
+## If Update Fetch Fails
+
+Tapping this repo before its first commit makes `brew update` look for a
+`main` branch. The tap’s branch is `master`, so the update prints
+`Fetching .../homebrew-tap failed!`. Remove the tap and add it again:
+
+```bash
+brew untap the-lupaxa-project/tap
+brew tap the-lupaxa-project/tap
+brew trust the-lupaxa-project/tap
+brew update
+```
+
+If `brew untap` fails because that checkout is broken:
+
+```bash
+rm -rf "$(brew --repository)/Library/Taps/the-lupaxa-project/homebrew-tap"
+brew tap the-lupaxa-project/tap
+brew trust the-lupaxa-project/tap
+```
