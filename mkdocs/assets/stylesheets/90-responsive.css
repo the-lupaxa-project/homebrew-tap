@@ -21,6 +21,9 @@
     width: 3.25rem;
     height: 3.25rem;
     margin-right: var(--lupaxa-spacing-sm);
+    /* Logo is the first header item while the links stay inline. The
+       desktop tuck (margin-left: -0.25rem) puts the mark on the screen edge. */
+    margin-left: max(var(--lupaxa-spacing-md), env(safe-area-inset-left, 0px));
   }
 
   .md-header__button.md-logo.lupaxa-header__logo img,
@@ -138,6 +141,11 @@
     display: inline-flex;
     order: -1;
     margin-right: var(--lupaxa-spacing-xs);
+  }
+
+  /* Menu button is first again, so tuck the logo against it. */
+  .md-header__button.md-logo.lupaxa-header__logo {
+    margin-left: -0.25rem;
   }
 
   .lupaxa-header__nav {

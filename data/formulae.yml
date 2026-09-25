@@ -58,7 +58,7 @@
   repository: https://github.com/lupaxa-security-toolbox/git-crypt-manager
   documentation: https://git-crypt-manager.thelupaxaproject.org/
   publish_date: "2025-11-27T22:26:41"
-  released_date: "2026-09-25T11:35:29"
+  released_date: "2026-09-25T15:24:15"
 
 - name: git-delete-tags
   title: Git Delete Tags
