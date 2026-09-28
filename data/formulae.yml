@@ -40,6 +40,24 @@
   publish_date: "2026-08-01T09:51:27"
   released_date: "2026-09-25T11:36:59"
 
+- name: get-all-tools
+  title: Get All Tools
+  organisation: CI/CD Toolbox
+  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  description: >-
+    Download all Lupaxa CICD Toolbox pipeline scripts into `~/bin`. A Python
+    helper that fetches each tool's `src/pipeline.sh` from
+    `lupaxa-cicd-toolbox` (master or latest release) and installs them as
+    `cicd-<tool>` commands.
+  categories:
+    - CI/CD
+    - CLI
+    - Developer Tools
+    - Automation
+  repository: https://github.com/lupaxa-cicd-toolbox/get-all-tools
+  publish_date: "2026-08-07T09:33:18"
+  released_date: "2026-09-26T21:37:46"
+
 - name: git-crypt-manager
   title: Git Crypt Manager
   organisation: Security Toolbox
