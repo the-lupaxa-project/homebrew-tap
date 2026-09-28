@@ -5,7 +5,7 @@
 - name: brew-manager
   title: Brew Manager
   organisation: Workstation Toolbox
-  logo: assets/images/brand/organisation-workstation-toolbox-logo.png
+  logo: assets/images/brand/organisations/organisation-workstation-toolbox-logo.png
   description: >-
     Interactive Homebrew maintenance menu for workstation brew state. Run
     common `brew` operations from a numbered menu — updates, upgrades,
@@ -23,7 +23,7 @@
 - name: check-git-repositories
   title: Check Git Repositories
   organisation: Git Toolbox
-  logo: assets/images/brand/organisation-git-toolbox-logo.png
+  logo: assets/images/brand/organisations/organisation-git-toolbox-logo.png
   description: >-
     Scan a directory tree for Git repositories and report anything that is
     not fully clean and synced with its upstream — uncommitted work, unpushed
@@ -43,7 +43,7 @@
 - name: git-crypt-manager
   title: Git Crypt Manager
   organisation: Security Toolbox
-  logo: assets/images/brand/organisation-security-toolbox-logo.png
+  logo: assets/images/brand/organisations/organisation-security-toolbox-logo.png
   description: >-
     Simplify the management of encrypted Git repositories with a guided
     automation tool built around
@@ -63,7 +63,7 @@
 - name: git-delete-tags
   title: Git Delete Tags
   organisation: Git Toolbox
-  logo: assets/images/brand/organisation-git-toolbox-logo.png
+  logo: assets/images/brand/organisations/organisation-git-toolbox-logo.png
   description: >-
     Delete local and remote Git tags with dry-run, summary, and protection.
     Remove specific tags or clear every tag in a repository while protecting
@@ -81,7 +81,7 @@
 - name: git-reset-history
   title: Git Reset History
   organisation: Git Toolbox
-  logo: assets/images/brand/organisation-git-toolbox-logo.png
+  logo: assets/images/brand/organisations/organisation-git-toolbox-logo.png
   description: >-
     Rewrite a Git repository down to a single initial commit — with dry-run,
     backups, and controlled tag handling. Keeps the current tree while

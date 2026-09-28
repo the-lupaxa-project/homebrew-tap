@@ -211,6 +211,21 @@
     box-shadow var(--lupaxa-transition-fast);
 }
 
+.md-typeset .grid.cards.catalogue-grid[data-organisation-catalogue] p:has(img.catalogue-logo) > a,
+.md-typeset .grid.cards.catalogue-grid[data-organisation-catalogue] p:has(img.catalogue-logo) > button,
+.md-typeset .grid.cards.catalogue-grid[data-organisation-catalogue] p:has(img.catalogue-logo) > .catalogue-logo-wrap,
+.md-typeset .grid.cards.catalogue-grid[data-project-catalogue] p:has(img.catalogue-logo) > a,
+.md-typeset .grid.cards.catalogue-grid[data-project-catalogue] p:has(img.catalogue-logo) > button,
+.md-typeset .grid.cards.catalogue-grid[data-project-catalogue] p:has(img.catalogue-logo) > .catalogue-logo-wrap,
+.md-typeset .grid.cards.catalogue-grid[data-policy-catalogue] p:has(img.catalogue-logo) > a,
+.md-typeset .grid.cards.catalogue-grid[data-policy-catalogue] p:has(img.catalogue-logo) > button,
+.md-typeset .grid.cards.catalogue-grid[data-policy-catalogue] p:has(img.catalogue-logo) > .catalogue-logo-wrap,
+.md-typeset .grid.cards.catalogue-grid[data-formula-catalogue] p:has(img.catalogue-logo) > a,
+.md-typeset .grid.cards.catalogue-grid[data-formula-catalogue] p:has(img.catalogue-logo) > button,
+.md-typeset .grid.cards.catalogue-grid[data-formula-catalogue] p:has(img.catalogue-logo) > .catalogue-logo-wrap {
+  border-radius: 10%;
+}
+
 .md-typeset .catalogue-grid p:has(img.catalogue-logo) > .catalogue-logo-wrap {
   cursor: default;
 }
