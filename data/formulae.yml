@@ -40,6 +40,25 @@
   publish_date: "2026-08-01T09:51:27"
   released_date: "2026-09-25T11:36:59"
 
+- name: every-repo
+  title: Every Repo
+  organisation: Git Toolbox
+  logo: assets/images/brand/organisations/organisation-git-toolbox-logo.png
+  description: >-
+    Run a command, a command file, or a script in every Git repository under a
+    path. Walks a directory tree, finds each Git repository, and runs the same
+    work in each one. A failure is reported, then the next repository still
+    runs. Use it when the same Git or Make command needs to land in many
+    checkouts.
+  categories:
+    - Git
+    - CLI
+    - Developer Tools
+    - Automation
+  repository: https://github.com/lupaxa-git-toolbox/every-repo
+  publish_date: "2026-09-29T08:56:13"
+  released_date: "2026-09-29T09:24:18"
+
 - name: get-all-tools
   title: Get All Tools
   organisation: CI/CD Toolbox
