@@ -18,180 +18,150 @@ hide:
         Homebrew formulae for The Lupaxa Project tools. One formula points at one tagged
         release of that tool's own repository.
     </p>
-
-    <div class="lupaxa-hero-actions">
-        <a class="md-button lupaxa-button" href="formulae/">
-            Formulae
-        </a>
-
-        <a class="md-button lupaxa-button" href="usage/">
-            Usage
-        </a>
-
-        <a class="md-button lupaxa-button" href="sponsor/">
-            Becoming a Sponsor
-        </a>
-    </div>
 </div>
 
-## Who We Are
+<!-- lupaxa-article-card -->
 
-<div class="about-introduction about-introduction-lead">
-    <p>
-        <strong translate="no">The Lupaxa Project</strong> is a community of independent
-        developers and contributors building useful software for developers,
-        system administrators, security professionals and anyone who values
-        clean, dependable tools.
-    </p>
-    <p>
-        We believe the best ideas are born at the intersection of wild instinct
-        and structured intelligence. Great tools don’t emerge from bureaucracy
-        or rigid frameworks, but from the freedom to create and the discipline
-        to refine. The Lupaxa Project is where exploration meets precision, and
-        where the untamed meets the engineered.
-    </p>
-    <p>
-        The project is volunteer-led. If you want to help cover time and
-        running costs, see <a href="sponsor/">Sponsor</a>.
-    </p>
-</div>
+# Usage
 
-<div class="grid cards about-summary" markdown>
+This tap publishes one Homebrew formula for each tagged Lupaxa Project tool. Add the
+tap, install what you need, then use the commands below to list, update, and
+remove formulae. Worked examples follow. The full command list is at the end.
 
--   :material-account-group:{ .lg .middle } **An Open Community**
+## Setup
 
-    ---
+Add this tap and trust it.
 
-    The Lupaxa Project is an informal collective rather than a company. There
-    are no customers, shareholders or commercial objectives directing its work.
+### Requirements
 
--   :material-source-repository-multiple:{ .lg .middle } **Built in the Open**
+- Homebrew
+- On Homebrew 7, trust the tap before the first install
 
-    ---
+Homebrew 7 will not install from a third-party tap until that tap is trusted.
 
-    Our source code, documentation and project discussions are maintained
-    openly on GitHub whenever the nature of the project permits it.
+### Install
 
--   :material-tools:{ .lg .middle } **Practical by Design**
+```bash
+brew tap the-lupaxa-project/tap
+brew trust the-lupaxa-project/tap
+```
 
-    ---
+### First Run
 
-    Projects begin with real problems and are shaped into focused, maintainable
-    tools that can be understood and used independently.
+List what the tap publishes:
 
-</div>
+```bash
+brew tap-info the-lupaxa-project/tap
+```
 
-## Our Philosophy
+That lists every formula and marks the ones already installed.
 
-Everything we create is guided by a consistent set of engineering principles.
+## Usage
 
-<div class="grid cards about-principles" markdown>
+### List Formulae
 
--   :material-hammer-wrench:{ .lg .middle } **Craftsmanship**
+```bash
+brew tap-info the-lupaxa-project/tap
+```
 
-    ---
+That lists every formula in this tap and marks the ones already installed.
 
-    Build with care, discipline and pride rather than relying on shortcuts.
+### Update the Tap
 
--   :material-eye-outline:{ .lg .middle } **Clarity**
+```bash
+brew update
+```
 
-    ---
+That fetches the newest formulae for this tap. To install newer versions of
+formulae you already have:
 
-    Prefer readable, understandable solutions over unnecessary cleverness.
+```bash
+brew upgrade
+```
 
--   :material-puzzle-outline:{ .lg .middle } **Composability**
+### If Update Fetch Fails
 
-    ---
+Tapping this repo before its first commit makes `brew update` look for a
+`main` branch. The tap's branch is `master`, so the update prints
+`Fetching .../homebrew-tap failed!`. Remove the tap and add it again:
 
-    Create tools that work well independently and even better together.
+```bash
+brew untap the-lupaxa-project/tap
+brew tap the-lupaxa-project/tap
+brew trust the-lupaxa-project/tap
+brew update
+```
 
--   :material-lightbulb-outline:{ .lg .middle } **Simplicity**
+If `brew untap` fails because that checkout is broken:
 
-    ---
+```bash
+rm -rf "$(brew --repository)/Library/Taps/the-lupaxa-project/homebrew-tap"
+brew tap the-lupaxa-project/tap
+brew trust the-lupaxa-project/tap
+```
 
-    Choose the straightforward solution whenever additional complexity provides
-    no meaningful benefit.
+## Examples
 
--   :material-shield-check-outline:{ .lg .middle } **Security**
+Replace `<formula>` with the formula you want. The other commands assume
+this tap is already added and trusted.
 
-    ---
+### Install a Formula
 
-    Treat security as a fundamental design requirement rather than an
-    afterthought.
+```bash
+brew install <formula>
+```
 
--   :material-compass-outline:{ .lg .middle } **Autonomy**
+Repeat `brew install` for each extra formula.
 
-    ---
+### Inspect Formulae
 
-    Respect user choice, transparency and the freedom to understand and adapt
-    the tools they use.
+```bash
+brew tap-info the-lupaxa-project/tap
+brew info <formula>
+```
 
-</div>
+`brew tap-info` lists every formula in the tap and marks the ones already
+installed. `brew info` shows one formula.
 
-## What We Build
+### Upgrade a Formula
 
-The Lupaxa Project contains a growing collection of software, documentation and
-shared resources across several technical disciplines.
+```bash
+brew update
+brew upgrade <formula>
+```
 
-<div class="grid cards about-build" markdown>
+`brew update` fetches newer formula definitions. `brew upgrade` without a
+name upgrades every outdated formula you already have.
 
--   :material-console:{ .lg .middle } **Developer Tools**
+### Uninstall a Formula
 
-    ---
+```bash
+brew uninstall <formula>
+```
 
-    Command-line applications, libraries and utilities that improve everyday
-    development workflows.
+That removes the installed formula. The tap stays in place.
 
--   :material-cog-sync:{ .lg .middle } **Automation and CI/CD**
+### Remove the Tap
 
-    ---
+```bash
+brew untap the-lupaxa-project/tap
+```
 
-    GitHub Actions, reusable workflows and automation for repeatable software
-    delivery and repository management.
+That removes the tap. Formulae you already installed stay installed.
 
--   :material-shield-lock-outline:{ .lg .middle } **Security Utilities**
+## Reference
 
-    ---
+### Commands
 
-    Focused tools that support secure development, analysis and systems
-    administration.
-
--   :material-server-outline:{ .lg .middle } **Infrastructure Tools**
-
-    ---
-
-    Utilities for managing services, platforms, containers and cloud
-    environments.
-
--   :material-file-document-outline:{ .lg .middle } **Documentation**
-
-    ---
-
-    Technical guidance, standards and reference material maintained alongside
-    the projects they describe.
-
--   :material-file-tree-outline:{ .lg .middle } **Shared Resources**
-
-    ---
-
-    Templates, brand assets, repository standards and common resources used
-    throughout the wider ecosystem.
-
-</div>
-
-## Why “Lupaxa”?
-
-<div class="about-name">
-    <div class="about-name-mark">LUPAXA</div>
-    <div class="about-name-content">
-        <p>
-            The name combines <em>lupus</em>, the Latin word for
-            <em>wolf</em>, with a modern suffix inspired by technology.
-        </p>
-        <p>
-            It represents the balance at the heart of the project: instinct
-            paired with precision, curiosity guided by discipline and freedom
-            strengthened through thoughtful engineering.
-        </p>
-    </div>
-</div>
+| Command                                | What it Does                                        |
+| -------------------------------------- | --------------------------------------------------- |
+| `brew tap the-lupaxa-project/tap`      | Add this tap                                        |
+| `brew trust the-lupaxa-project/tap`    | Allow Homebrew 7 to install from this tap           |
+| `brew install <formula>`               | Install one formula from the tap                    |
+| `brew info <formula>`                  | Show one formula                                    |
+| `brew tap-info the-lupaxa-project/tap` | List formulae and mark the ones already installed   |
+| `brew update`                          | Fetch newer formula definitions                     |
+| `brew upgrade`                         | Upgrade every outdated formula you already have     |
+| `brew upgrade <formula>`               | Upgrade one installed formula                       |
+| `brew uninstall <formula>`             | Remove one installed formula                        |
+| `brew untap the-lupaxa-project/tap`    | Remove the tap                                      |

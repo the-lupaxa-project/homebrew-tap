@@ -103,7 +103,6 @@ hooks:
 nav:
   - Home: index.md
   - Formulae: formulae.md
-  - Usage: usage.md
   - Sponsor: sponsor.md
 
 markdown_extensions:

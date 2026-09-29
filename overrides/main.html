@@ -33,9 +33,7 @@
 
 {% block container %}
   {# Same page list as overrides/partials/content.html. #}
-  {% set is_card_page = page and page.file and page.file.src_uri in [
-    "usage.md",
-  ] %}
+  {% set is_card_page = page and page.file and page.file.src_uri in [] %}
   <div class="md-content" data-md-component="content">
     {% if "navigation.path" in features %}
       {% include "partials/path.html" %}

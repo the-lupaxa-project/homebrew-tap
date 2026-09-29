@@ -71,13 +71,9 @@
   margin: 0 auto !important;
 }
 
-/* Formula cards: version only, in the Stable banner blue. */
-.md-typeset .catalogue-grid .catalogue-banner--version .catalogue-banner__band {
-  background: var(--lupaxa-blue);
-}
-
+/* Version-only sash. Colour comes from the shared banner rules so print
+   can drop the plate and use dark text, as on the portal. */
 .md-typeset .catalogue-grid .catalogue-banner--version .catalogue-banner__text {
-  color: var(--lupaxa-white);
   text-transform: none;
 }
 

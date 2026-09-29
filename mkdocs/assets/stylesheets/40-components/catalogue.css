@@ -165,14 +165,17 @@
 .md-typeset .grid.cards.catalogue-grid[data-project-catalogue] > ul > li > hr:first-of-type,
 .md-typeset .grid.cards.catalogue-grid[data-project-catalogue] > li > hr:first-of-type,
 .md-typeset .grid.cards.catalogue-grid[data-policy-catalogue] > ul > li > hr:first-of-type,
-.md-typeset .grid.cards.catalogue-grid[data-policy-catalogue] > li > hr:first-of-type {
+.md-typeset .grid.cards.catalogue-grid[data-policy-catalogue] > li > hr:first-of-type,
+.md-typeset .grid.cards.catalogue-grid[data-formula-catalogue] > ul > li > hr:first-of-type,
+.md-typeset .grid.cards.catalogue-grid[data-formula-catalogue] > li > hr:first-of-type {
   margin-top: 0.8rem;
   margin-bottom: 0.95rem;
 }
 
 .md-typeset .grid.cards.catalogue-grid[data-organisation-catalogue] p:has(img.catalogue-logo),
 .md-typeset .grid.cards.catalogue-grid[data-project-catalogue] p:has(img.catalogue-logo),
-.md-typeset .grid.cards.catalogue-grid[data-policy-catalogue] p:has(img.catalogue-logo) {
+.md-typeset .grid.cards.catalogue-grid[data-policy-catalogue] p:has(img.catalogue-logo),
+.md-typeset .grid.cards.catalogue-grid[data-formula-catalogue] p:has(img.catalogue-logo) {
   min-height: 0;
   margin-bottom: 0.9rem;
 }
