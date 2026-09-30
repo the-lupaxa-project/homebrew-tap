@@ -29,10 +29,10 @@ extra:
     - Where the untamed meets the engineered.
   counter_dev_id: ef410665-76d4-43fe-9e91-53f26ed1004b
   counter_dev_utcoffset: 0
-  social_image: assets/images/the-lupaxa-project-social-card.png
+  social_image: assets/images/social-media-card.png
   social_image_width: 1200
   social_image_height: 630
-  social_logo: assets/images/the-lupaxa-project-logo.png
+  social_logo: assets/images/logo.png
   social_locale: en_GB
   theme_color: "#203959"
   twitter_card: summary_large_image
@@ -64,7 +64,7 @@ theme:
     text: IBM Plex Sans
     code: IBM Plex Mono
   language: en
-  logo: assets/images/the-lupaxa-project-logo.png
+  logo: assets/images/logo.png
   favicon: assets/images/favicon.png
 
   features:
