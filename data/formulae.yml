@@ -5,7 +5,7 @@
 - name: brew-manager
   title: Brew Manager
   organisation: Workstation Toolbox
-  logo: assets/images/brand/organisations/organisation-workstation-toolbox-logo.png
+  logo: assets/images/organisations/organisation-workstation-toolbox-logo.png
   description: >-
     Interactive Homebrew maintenance menu for workstation brew state. Run
     common `brew` operations from a numbered menu — updates, upgrades,
@@ -16,14 +16,13 @@
     - Package Management
     - Workstation
   repository: https://github.com/lupaxa-workstation-toolbox/brew-manager
-  documentation: https://brew-manager.thelupaxaproject.org/
   publish_date: "2026-08-01T09:46:31"
-  released_date: "2026-09-25T11:34:07"
+  released_date: "2026-09-30T11:52:29"
 
 - name: check-git-repositories
   title: Check Git Repositories
   organisation: Git Toolbox
-  logo: assets/images/brand/organisations/organisation-git-toolbox-logo.png
+  logo: assets/images/organisations/organisation-git-toolbox-logo.png
   description: >-
     Scan a directory tree for Git repositories and report anything that is
     not fully clean and synced with its upstream — uncommitted work, unpushed
@@ -36,14 +35,13 @@
     - Repository Management
     - CLI
   repository: https://github.com/lupaxa-git-toolbox/check-git-repositories
-  documentation: https://check-git-repositories.thelupaxaproject.org/
   publish_date: "2026-08-01T09:51:27"
-  released_date: "2026-09-25T11:36:59"
+  released_date: "2026-09-30T08:19:19"
 
 - name: every-repo
   title: Every Repo
   organisation: Git Toolbox
-  logo: assets/images/brand/organisations/organisation-git-toolbox-logo.png
+  logo: assets/images/organisations/organisation-git-toolbox-logo.png
   description: >-
     Run a command, a command file, or a script in every Git repository under a
     path. Walks a directory tree, finds each Git repository, and runs the same
@@ -62,7 +60,7 @@
 - name: get-all-tools
   title: Get All Tools
   organisation: CI/CD Toolbox
-  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
   description: >-
     Download all Lupaxa CICD Toolbox pipeline scripts into `~/bin`. A Python
     helper that fetches each tool's `src/pipeline.sh` from
@@ -80,7 +78,7 @@
 - name: git-crypt-manager
   title: Git Crypt Manager
   organisation: Security Toolbox
-  logo: assets/images/brand/organisations/organisation-security-toolbox-logo.png
+  logo: assets/images/organisations/organisation-security-toolbox-logo.png
   description: >-
     Simplify the management of encrypted Git repositories with a guided
     automation tool built around
@@ -93,14 +91,13 @@
     - Git
     - Automation
   repository: https://github.com/lupaxa-security-toolbox/git-crypt-manager
-  documentation: https://git-crypt-manager.thelupaxaproject.org/
   publish_date: "2025-11-27T22:26:41"
-  released_date: "2026-09-25T15:24:15"
+  released_date: "2026-09-30T11:15:29"
 
 - name: git-delete-tags
   title: Git Delete Tags
   organisation: Git Toolbox
-  logo: assets/images/brand/organisations/organisation-git-toolbox-logo.png
+  logo: assets/images/organisations/organisation-git-toolbox-logo.png
   description: >-
     Delete local and remote Git tags with dry-run, summary, and protection.
     Remove specific tags or clear every tag in a repository while protecting
@@ -118,7 +115,7 @@
 - name: git-reset-history
   title: Git Reset History
   organisation: Git Toolbox
-  logo: assets/images/brand/organisations/organisation-git-toolbox-logo.png
+  logo: assets/images/organisations/organisation-git-toolbox-logo.png
   description: >-
     Rewrite a Git repository down to a single initial commit — with dry-run,
     backups, and controlled tag handling. Keeps the current tree while

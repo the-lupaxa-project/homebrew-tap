@@ -1,8 +1,8 @@
 class CheckGitRepositories < Formula
   desc "Bash CLI to scan a directory tree for Git repos and report unclean or unsynced state"
   homepage "https://github.com/lupaxa-git-toolbox/check-git-repositories"
-  url "https://github.com/lupaxa-git-toolbox/check-git-repositories/archive/refs/tags/v0.1.5.tar.gz"
-  sha256 "932108cddbe38d6b4a0054647e6b56ba9cf786b5f23342c4b2c6be1fef71e99c"
+  url "https://github.com/lupaxa-git-toolbox/check-git-repositories/archive/refs/tags/v0.1.7.tar.gz"
+  sha256 "84bba65b7dc38237b8011d340d46ad7142ac748728e3f507a342f16713f9e4cb"
   license "MIT"
 
   def install

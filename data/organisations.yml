@@ -10,7 +10,7 @@
     - Automation
     - CI/CD
     - GitHub Actions
-  logo: assets/images/brand/organisations/organisation-actions-toolbox-logo.png
+  logo: assets/images/organisations/organisation-actions-toolbox-logo.png
   logo_alt: Actions Toolbox
   repository: https://github.com/lupaxa-actions-toolbox
 
@@ -26,7 +26,7 @@
     - APIs
     - Data Conversion
     - Data Extraction
-  logo: assets/images/brand/organisations/organisation-api-extractor-toolbox-logo.png
+  logo: assets/images/organisations/organisation-api-extractor-toolbox-logo.png
   logo_alt: API Extractor Toolbox
   repository: https://github.com/lupaxa-api-extractor-toolbox
 
@@ -43,7 +43,7 @@
     - Cloud
     - Infrastructure
     - Automation
-  logo: assets/images/brand/organisations/organisation-aws-toolbox-logo.png
+  logo: assets/images/organisations/organisation-aws-toolbox-logo.png
   logo_alt: AWS Toolbox
   repository: https://github.com/lupaxa-aws-toolbox
 
@@ -60,7 +60,7 @@
     - Automation
     - DevOps
     - Linting
-  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox
 
@@ -76,7 +76,7 @@
     - Databases
     - Storage
     - Automation
-  logo: assets/images/brand/organisations/organisation-database-toolbox-logo.png
+  logo: assets/images/organisations/organisation-database-toolbox-logo.png
   logo_alt: Database Toolbox
   repository: https://github.com/lupaxa-database-toolbox
 
@@ -91,7 +91,7 @@
   categories:
     - Developer Tools
     - Productivity
-  logo: assets/images/brand/organisations/organisation-developers-toolbox-logo.png
+  logo: assets/images/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox
 
@@ -106,7 +106,7 @@
   categories:
     - Docker
     - Containers
-  logo: assets/images/brand/organisations/organisation-docker-toolbox-logo.png
+  logo: assets/images/organisations/organisation-docker-toolbox-logo.png
   logo_alt: Docker Toolbox
   repository: https://github.com/lupaxa-docker-toolbox
 
@@ -122,7 +122,7 @@
     - Git
     - Developer Tools
     - Automation
-  logo: assets/images/brand/organisations/organisation-git-toolbox-logo.png
+  logo: assets/images/organisations/organisation-git-toolbox-logo.png
   logo_alt: Git Toolbox
   repository: https://github.com/lupaxa-git-toolbox
 
@@ -138,7 +138,7 @@
     - Git
     - Git Hooks
     - Automation
-  logo: assets/images/brand/organisations/organisation-git-hooks-toolbox-logo.png
+  logo: assets/images/organisations/organisation-git-hooks-toolbox-logo.png
   logo_alt: Git Hooks Toolbox
   repository: https://github.com/lupaxa-git-hooks-toolbox
 
@@ -154,7 +154,7 @@
     - Automation
     - GitHub
     - Repository Management
-  logo: assets/images/brand/organisations/organisation-gh-toolbox-logo.png
+  logo: assets/images/organisations/organisation-gh-toolbox-logo.png
   logo_alt: GitHub Toolbox
   repository: https://github.com/lupaxa-gh-toolbox
 
@@ -168,7 +168,7 @@
     catalogue.
   categories:
     - Utilities
-  logo: assets/images/brand/organisations/organisation-miscellaneous-toolbox-logo.png
+  logo: assets/images/organisations/organisation-miscellaneous-toolbox-logo.png
   logo_alt: Miscellaneous Toolbox
   repository: https://github.com/lupaxa-miscellaneous-toolbox
 
@@ -184,7 +184,7 @@
     - Monitoring
     - Observability
     - Operations
-  logo: assets/images/brand/organisations/organisation-monitoring-toolbox-logo.png
+  logo: assets/images/organisations/organisation-monitoring-toolbox-logo.png
   logo_alt: Monitoring Toolbox
   repository: https://github.com/lupaxa-monitoring-toolbox
 
@@ -200,7 +200,7 @@
     - Automation
     - Messaging
     - Notifications
-  logo: assets/images/brand/organisations/organisation-notifications-toolbox-logo.png
+  logo: assets/images/organisations/organisation-notifications-toolbox-logo.png
   logo_alt: Notifications Toolbox
   repository: https://github.com/lupaxa-notifications-toolbox
 
@@ -217,7 +217,7 @@
     - Encryption
     - Reconnaissance
     - Security
-  logo: assets/images/brand/organisations/organisation-security-toolbox-logo.png
+  logo: assets/images/organisations/organisation-security-toolbox-logo.png
   logo_alt: Security Toolbox
   repository: https://github.com/lupaxa-security-toolbox
 
@@ -232,7 +232,7 @@
     - Web Scraping
     - Data Extraction
     - Automation
-  logo: assets/images/brand/organisations/organisation-spider-toolbox-logo.png
+  logo: assets/images/organisations/organisation-spider-toolbox-logo.png
   logo_alt: Spider Toolbox
   repository: https://github.com/lupaxa-spider-toolbox
 
@@ -248,7 +248,7 @@
     - Reliability
     - Operations
     - Automation
-  logo: assets/images/brand/organisations/organisation-sre-toolbox-logo.png
+  logo: assets/images/organisations/organisation-sre-toolbox-logo.png
   logo_alt: SRE Toolbox
   repository: https://github.com/lupaxa-sre-toolbox
 
@@ -264,6 +264,6 @@
     - Package Management
     - Productivity
     - Shell
-  logo: assets/images/brand/organisations/organisation-workstation-toolbox-logo.png
+  logo: assets/images/organisations/organisation-workstation-toolbox-logo.png
   logo_alt: Workstation Toolbox
   repository: https://github.com/lupaxa-workstation-toolbox

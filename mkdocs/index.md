@@ -7,8 +7,8 @@ hide:
 <div class="lupaxa-hero">
     <img
         class="lupaxa-hero-logo"
-        src="assets/images/brand/the-lupaxa-project-hero-logo.png"
-        alt="The Lupaxa Project Logo"
+        src="assets/images/hero-logo.png"
+        alt="Homebrew Tap"
         translate="no"/>
     <h1 class="lupaxa-hero-title" translate="no">
         Homebrew Tap
