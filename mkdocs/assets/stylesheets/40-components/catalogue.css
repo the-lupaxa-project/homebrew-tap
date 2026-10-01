@@ -226,11 +226,18 @@
 .md-typeset .grid.cards.catalogue-grid[data-formula-catalogue] p:has(img.catalogue-logo) > a,
 .md-typeset .grid.cards.catalogue-grid[data-formula-catalogue] p:has(img.catalogue-logo) > button,
 .md-typeset .grid.cards.catalogue-grid[data-formula-catalogue] p:has(img.catalogue-logo) > .catalogue-logo-wrap {
-  border-radius: 10%;
+  /* 22px corners on the 128px organisation mark. */
+  border-radius: 17.1875%;
 }
 
-.md-typeset .catalogue-grid p:has(img.catalogue-logo) > .catalogue-logo-wrap {
-  cursor: default;
+.md-typeset .catalogue-grid p:has(img.catalogue-logo) > a,
+.md-typeset .catalogue-grid p:has(img.catalogue-logo) > button,
+.md-typeset .catalogue-grid .catalogue-logo-wrap:has(a),
+.md-typeset .catalogue-grid .catalogue-logo-wrap:has(button),
+.md-typeset .catalogue-grid .catalogue-logo-wrap > a,
+.md-typeset .catalogue-grid .catalogue-logo-wrap > button,
+.md-typeset .catalogue-grid .catalogue-logo-wrap img.catalogue-logo {
+  cursor: pointer;
 }
 
 .md-typeset .catalogue-grid img.catalogue-logo {
@@ -241,6 +248,11 @@
   max-height: 128px;
   margin: 0;
   object-fit: contain;
+  transition: filter var(--lupaxa-transition-fast);
+}
+
+.lupaxa-logo-frame__flood {
+  flood-color: var(--lupaxa-card-hover-border);
 }
 
 .md-typeset .catalogue-grid p:has(img.catalogue-logo) > a:hover,
@@ -248,15 +260,17 @@
 .md-typeset .catalogue-grid p:has(img.catalogue-logo) > button:hover,
 .md-typeset .catalogue-grid p:has(img.catalogue-logo) > button:focus-visible,
 .md-typeset .catalogue-grid p:has(img.catalogue-logo) > .catalogue-logo-wrap:hover,
-.md-typeset .catalogue-grid p:has(img.catalogue-logo) > .catalogue-logo-wrap:focus-visible {
-  filter: brightness(1.08);
-  box-shadow:
-    0 0 0 2px
-    color-mix(
-      in srgb,
-      var(--lupaxa-light-blue) 35%,
-      transparent
-    );
+.md-typeset .catalogue-grid p:has(img.catalogue-logo) > .catalogue-logo-wrap:focus-within {
+  box-shadow: none;
+}
+
+.md-typeset .catalogue-grid p:has(img.catalogue-logo) > a:hover img.catalogue-logo,
+.md-typeset .catalogue-grid p:has(img.catalogue-logo) > a:focus-visible img.catalogue-logo,
+.md-typeset .catalogue-grid p:has(img.catalogue-logo) > button:hover img.catalogue-logo,
+.md-typeset .catalogue-grid p:has(img.catalogue-logo) > button:focus-visible img.catalogue-logo,
+.md-typeset .catalogue-grid p:has(img.catalogue-logo) > .catalogue-logo-wrap:hover img.catalogue-logo,
+.md-typeset .catalogue-grid p:has(img.catalogue-logo) > .catalogue-logo-wrap:focus-within img.catalogue-logo {
+  filter: url("#lupaxa-logo-frame");
 }
 
 /* Keep actionable controls above any stretched title-link hit area. */
