@@ -6,6 +6,12 @@
 @media screen and (max-width: 76.234375em) {
   :root {
     --lupaxa-header-height: 4rem;
+    --lupaxa-gutter-left: calc(
+      max(var(--lupaxa-spacing-md), env(safe-area-inset-left, 0px)) + 0.2rem
+    );
+    --lupaxa-gutter-right: calc(
+      max(var(--lupaxa-spacing-md), env(safe-area-inset-right, 0px)) + 0.2rem
+    );
   }
 
   .md-header {
@@ -21,9 +27,7 @@
     width: 3.25rem;
     height: 3.25rem;
     margin-right: var(--lupaxa-spacing-sm);
-    /* Logo is the first header item while the links stay inline. The
-       desktop tuck (margin-left: -0.25rem) puts the mark on the screen edge. */
-    margin-left: max(var(--lupaxa-spacing-md), env(safe-area-inset-left, 0px));
+    margin-left: 0;
   }
 
   .md-header__button.md-logo.lupaxa-header__logo img,
@@ -33,11 +37,6 @@
     max-width: none;
     max-height: none;
     object-fit: contain;
-  }
-
-  /* Tablet / landscape: full GitHub chip + picker, inset from the screen edge. */
-  .lupaxa-header__tools {
-    margin-right: max(var(--lupaxa-spacing-md), env(safe-area-inset-right, 0px));
   }
 
   .lupaxa-lang-picker {
@@ -112,18 +111,6 @@
     font-weight: 700;
   }
 
-  /* Same inset as the header controls: 0.2rem header padding plus 1rem. */
-  .md-content__inner,
-  [dir="ltr"] .md-sidebar--primary:not([hidden]) ~ .md-content > .md-content__inner,
-  [dir="ltr"] .md-sidebar--secondary:not([hidden]) ~ .md-content > .md-content__inner {
-    margin-right: calc(
-      max(var(--lupaxa-spacing-md), env(safe-area-inset-right, 0px)) + 0.2rem
-    );
-    margin-left: calc(
-      max(var(--lupaxa-spacing-md), env(safe-area-inset-left, 0px)) + 0.2rem
-    );
-  }
-
   .md-typeset .grid.cards.about-principles,
   .md-typeset .grid.cards.about-build {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -138,15 +125,24 @@
 }
 
 @media screen and (max-width: 46em) {
+  :root {
+    --lupaxa-gutter-left: calc(
+      (
+        max(var(--lupaxa-spacing-md), env(safe-area-inset-left, 0px)) + 0.2rem
+      ) / 2
+    );
+    --lupaxa-gutter-right: calc(
+      (
+        max(var(--lupaxa-spacing-md), env(safe-area-inset-right, 0px)) + 0.2rem
+      ) / 2
+    );
+  }
+
   .md-header__button.lupaxa-header__drawer-button {
     display: inline-flex;
     order: -1;
     margin-right: var(--lupaxa-spacing-xs);
-  }
-
-  /* Menu button is first again, so tuck the logo against it. */
-  .md-header__button.md-logo.lupaxa-header__logo {
-    margin-left: -0.25rem;
+    margin-left: 0;
   }
 
   .lupaxa-header__nav {
