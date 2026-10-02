@@ -1,8 +1,8 @@
 class PrivacyReset < Formula
   desc "Interactive menu to reset macOS privacy grants for one app or every app"
   homepage "https://github.com/lupaxa-workstation-toolbox/privacy-reset"
-  url "https://github.com/lupaxa-workstation-toolbox/privacy-reset/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "c724328dcbd0b2f3b843970eec9673b1782f5b4f68a1eaa39a65711763e89535"
+  url "https://github.com/lupaxa-workstation-toolbox/privacy-reset/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "d78c2787c32c14c72800089eb32df929c449c69086b54f7a0997f0e28a5bc844"
   license "MIT"
 
   def install
