@@ -13,8 +13,8 @@
     disabled casks — with confirmation prompts before destructive actions.
   categories:
     - Homebrew
-    - Package Management
     - Workstation
+    - Package Management
   repository: https://github.com/lupaxa-workstation-toolbox/brew-manager
   publish_date: "2026-08-01T09:46:31"
   released_date: "2026-09-30T11:52:29"
@@ -50,9 +50,8 @@
     checkouts.
   categories:
     - Git
-    - CLI
-    - Developer Tools
     - Automation
+    - CLI
   repository: https://github.com/lupaxa-git-toolbox/every-repo
   publish_date: "2026-09-29T08:56:13"
   released_date: "2026-09-29T09:24:18"
@@ -74,6 +73,38 @@
   repository: https://github.com/lupaxa-cicd-toolbox/get-all-tools
   publish_date: "2026-08-07T09:33:18"
   released_date: "2026-09-26T21:37:46"
+
+- name: git-change-author
+  title: Git Change Author
+  organisation: Git Toolbox
+  logo: assets/images/organisations/organisation-git-toolbox-logo.png
+  description: >-
+    Bash CLI to rewrite Git commit author and committer identity for one
+    email address, with dry-run, summary, and local-only modes.
+  categories:
+    - Git
+    - Automation
+    - Repository Management
+    - CLI
+  repository: https://github.com/lupaxa-git-toolbox/git-change-author
+  publish_date: "2026-10-02T12:56:25"
+  released_date: "2026-10-02T13:11:17"
+
+- name: git-change-branch-name
+  title: Git Change Branch Name
+  organisation: Git Toolbox
+  logo: assets/images/organisations/organisation-git-toolbox-logo.png
+  description: >-
+    Bash CLI to rename a local Git branch and the same branch on the remote,
+    with dry-run, summary, and local-only modes.
+  categories:
+    - Git
+    - Automation
+    - Repository Management
+    - CLI
+  repository: https://github.com/lupaxa-git-toolbox/git-change-branch-name
+  publish_date: "2026-10-02T13:03:37"
+  released_date: "2026-10-02T13:24:59"
 
 - name: git-crypt-manager
   title: Git Crypt Manager
@@ -122,10 +153,10 @@
     replacing primary-branch history. Useful after scaffolding, before a
     first public release, or when history is no longer useful.
   categories:
-    - Automation
-    - CLI
     - Git
+    - Automation
     - Repository Management
+    - CLI
   repository: https://github.com/lupaxa-git-toolbox/git-reset-history
   publish_date: "2026-08-01T09:49:14"
   released_date: "2026-09-25T11:40:03"
@@ -136,11 +167,10 @@
   logo: assets/images/organisations/organisation-workstation-toolbox-logo.png
   description: Interactive menu to reset macOS privacy grants for one app or every app.
   categories:
-    - CLI
-    - Interactive
-    - macOS
-    - Privacy
     - Workstation
+    - Privacy
+    - macOS
+    - CLI
   repository: https://github.com/lupaxa-workstation-toolbox/privacy-reset
   publish_date: "2026-10-02T08:52:15"
   released_date: "2026-10-02T11:13:03"
