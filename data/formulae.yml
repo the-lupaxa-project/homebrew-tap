@@ -129,3 +129,18 @@
   repository: https://github.com/lupaxa-git-toolbox/git-reset-history
   publish_date: "2026-08-01T09:49:14"
   released_date: "2026-09-25T11:40:03"
+
+- name: privacy-reset
+  title: Privacy Reset
+  organisation: Workstation Toolbox
+  logo: assets/images/organisations/organisation-workstation-toolbox-logo.png
+  description: Interactive menu to reset macOS privacy grants for one app or every app.
+  categories:
+    - CLI
+    - Interactive
+    - macOS
+    - Privacy
+    - Workstation
+  repository: https://github.com/lupaxa-workstation-toolbox/privacy-reset
+  publish_date: "2026-10-02T08:52:15"
+  released_date: "2026-10-02T10:50:38"
