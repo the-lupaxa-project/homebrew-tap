@@ -174,3 +174,22 @@
   repository: https://github.com/lupaxa-workstation-toolbox/privacy-reset
   publish_date: "2026-10-02T08:52:15"
   released_date: "2026-10-02T11:13:03"
+
+- name: safe-rm
+  title: Safe Rm
+  organisation: Workstation Toolbox
+  logo: assets/images/organisations/organisation-workstation-toolbox-logo.png
+  description: Recoverable replacement for interactive rm and rmdir.
+  categories:
+    - Bash
+    - CLI
+    - Linux
+    - macOS
+    - Recovery
+    - Safe Rm
+    - Shell
+    - Trash
+    - Workstation
+  repository: https://github.com/lupaxa-workstation-toolbox/safe-rm
+  publish_date: "2026-10-03T14:45:00"
+  released_date: "2026-10-03T15:30:28"
