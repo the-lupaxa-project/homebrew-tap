@@ -14,6 +14,21 @@
   logo_alt: Actions Toolbox
   repository: https://github.com/lupaxa-actions-toolbox
 
+- id: ai-toolbox
+  published: true
+  name: AI Toolbox
+  icon: material-domain
+  publish_date: "2026-10-03T09:27:30"
+  description: AI tools and utilities for models, assistants and automation across
+    The Lupaxa Project.
+  categories:
+    - AI
+    - Automation
+    - Developer Tools
+  logo: assets/images/organisations/organisation-ai-toolbox-logo.png
+  logo_alt: AI Toolbox
+  repository: https://github.com/lupaxa-ai-toolbox
+
 - id: api-extractor-toolbox
   published: true
   name: API Extractor Toolbox
