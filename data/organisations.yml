@@ -1,3 +1,17 @@
+- id: after-hours
+  published: true
+  name: After Hours
+  icon: material-domain
+  publish_date: "2026-10-05T08:44:56"
+  description: Lupaxa After Hours contains the projects that happen when the serious
+    work is finished and someone says, "I wonder if we could..."
+  categories:
+    - Experiments
+    - Side Projects
+  logo: assets/images/organisations/organisation-after-hours-logo.png
+  logo_alt: After Hours
+  repository: https://github.com/lupaxa-after-hours
+
 - id: actions-toolbox
   published: true
   name: Actions Toolbox
