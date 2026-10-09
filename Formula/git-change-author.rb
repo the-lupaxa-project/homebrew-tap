@@ -1,8 +1,8 @@
 class GitChangeAuthor < Formula
   desc "Bash CLI to rewrite Git commit author and committer identity for one email address, with dry-run, summary, and local-only modes"
   homepage "https://github.com/lupaxa-git-toolbox/git-change-author"
-  url "https://github.com/lupaxa-git-toolbox/git-change-author/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "1a43f8fe23fb795ccf29bf73c4906e17ee2b7748eeec2d5b82d2fc02b066dc1d"
+  url "https://github.com/lupaxa-git-toolbox/git-change-author/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "1768396b9b0ff7ec2725bd0d7b23be6bf3e2bb32e486e217c716c8e1f635714a"
   license "MIT"
 
   def install

@@ -1,8 +1,8 @@
 class BrewManager < Formula
   desc "Helper tooling for managing Homebrew packages and workstation brew state"
   homepage "https://github.com/lupaxa-workstation-toolbox/brew-manager"
-  url "https://github.com/lupaxa-workstation-toolbox/brew-manager/archive/refs/tags/v0.1.6.tar.gz"
-  sha256 "32bb0ddeff783cce73de6cbbded886a48bdcf6c1b9f7938752735cfb75934828"
+  url "https://github.com/lupaxa-workstation-toolbox/brew-manager/archive/refs/tags/v0.1.7.tar.gz"
+  sha256 "6fdbc8bc61d964ddd288d36d75bdbbba4d4d52aca50b3e707a03b3426a77c91a"
   license "MIT"
 
   def install

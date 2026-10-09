@@ -1,8 +1,8 @@
 class GitCryptManager < Formula
   desc "A secure, guided automation tool for managing encrypted repositories using git-crypt"
   homepage "https://github.com/lupaxa-security-toolbox/git-crypt-manager"
-  url "https://github.com/lupaxa-security-toolbox/git-crypt-manager/archive/refs/tags/v1.0.7.tar.gz"
-  sha256 "4f42b4930a484e01c3cf8d87f587d88b0533a7a083b10f1f457ebe31e8f340b9"
+  url "https://github.com/lupaxa-security-toolbox/git-crypt-manager/archive/refs/tags/v1.0.8.tar.gz"
+  sha256 "bb3fcbd02a41d27017ec79a785109ca8a98450e4e6c308d840ce55d4df7b0267"
   license "MIT"
 
   depends_on "git"

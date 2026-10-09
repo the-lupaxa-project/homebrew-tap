@@ -1,8 +1,8 @@
 class GitResetHistory < Formula
   desc "Bash CLI to flatten a Git repository to a single initial commit, with dry-run, backups, and controlled tag handling"
   homepage "https://github.com/lupaxa-git-toolbox/git-reset-history"
-  url "https://github.com/lupaxa-git-toolbox/git-reset-history/archive/refs/tags/v0.1.4.tar.gz"
-  sha256 "8c4fd7e5e33410735f2e5adefa10fd6b83f2e83db269402947418e7ccb69851a"
+  url "https://github.com/lupaxa-git-toolbox/git-reset-history/archive/refs/tags/v0.1.5.tar.gz"
+  sha256 "3e90d2fdb40f0a0afa23725fcd3ba089692ecdccdfed5e8c79157c005d2641d5"
   license "MIT"
 
   def install

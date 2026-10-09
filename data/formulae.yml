@@ -17,7 +17,7 @@
     - Package Management
   repository: https://github.com/lupaxa-workstation-toolbox/brew-manager
   publish_date: "2026-08-01T09:46:31"
-  released_date: "2026-09-30T11:52:29"
+  released_date: "2026-10-07T09:25:39"
 
 - name: check-git-repositories
   title: Check Git Repositories
@@ -36,7 +36,7 @@
     - CLI
   repository: https://github.com/lupaxa-git-toolbox/check-git-repositories
   publish_date: "2026-08-01T09:51:27"
-  released_date: "2026-09-30T08:19:19"
+  released_date: "2026-10-07T09:19:07"
 
 - name: every-repo
   title: Every Repo
@@ -54,7 +54,7 @@
     - CLI
   repository: https://github.com/lupaxa-git-toolbox/every-repo
   publish_date: "2026-09-29T08:56:13"
-  released_date: "2026-09-29T09:24:18"
+  released_date: "2026-10-07T09:19:10"
 
 - name: get-all-tools
   title: Get All Tools
@@ -72,7 +72,7 @@
     - Automation
   repository: https://github.com/lupaxa-cicd-toolbox/get-all-tools
   publish_date: "2026-08-07T09:33:18"
-  released_date: "2026-09-26T21:37:46"
+  released_date: "2026-10-09T11:21:15"
 
 - name: git-change-author
   title: Git Change Author
@@ -88,7 +88,7 @@
     - CLI
   repository: https://github.com/lupaxa-git-toolbox/git-change-author
   publish_date: "2026-10-02T12:56:25"
-  released_date: "2026-10-02T13:11:17"
+  released_date: "2026-10-07T09:20:25"
 
 - name: git-change-branch-name
   title: Git Change Branch Name
@@ -104,7 +104,7 @@
     - CLI
   repository: https://github.com/lupaxa-git-toolbox/git-change-branch-name
   publish_date: "2026-10-02T13:03:37"
-  released_date: "2026-10-02T13:24:59"
+  released_date: "2026-10-07T09:20:35"
 
 - name: git-crypt-manager
   title: Git Crypt Manager
@@ -123,7 +123,7 @@
     - Automation
   repository: https://github.com/lupaxa-security-toolbox/git-crypt-manager
   publish_date: "2025-11-27T22:26:41"
-  released_date: "2026-09-30T11:15:29"
+  released_date: "2026-10-07T09:26:19"
 
 - name: git-delete-tags
   title: Git Delete Tags
@@ -141,7 +141,7 @@
     - CLI
   repository: https://github.com/lupaxa-git-toolbox/git-delete-tags
   publish_date: "2026-08-01T09:50:38"
-  released_date: "2026-09-25T11:38:16"
+  released_date: "2026-10-07T09:20:58"
 
 - name: git-reset-history
   title: Git Reset History
@@ -159,7 +159,7 @@
     - CLI
   repository: https://github.com/lupaxa-git-toolbox/git-reset-history
   publish_date: "2026-08-01T09:49:14"
-  released_date: "2026-09-25T11:40:03"
+  released_date: "2026-10-07T09:20:52"
 
 - name: privacy-reset
   title: Privacy Reset
@@ -173,7 +173,7 @@
     - CLI
   repository: https://github.com/lupaxa-workstation-toolbox/privacy-reset
   publish_date: "2026-10-02T08:52:15"
-  released_date: "2026-10-02T11:13:03"
+  released_date: "2026-10-07T09:25:31"
 
 - name: safe-rm
   title: Safe Rm
@@ -192,4 +192,4 @@
     - Workstation
   repository: https://github.com/lupaxa-workstation-toolbox/safe-rm
   publish_date: "2026-10-03T14:45:00"
-  released_date: "2026-10-03T15:30:28"
+  released_date: "2026-10-07T09:25:32"
