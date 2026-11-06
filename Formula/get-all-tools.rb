@@ -3,8 +3,8 @@ class GetAllTools < Formula
 
   desc "Download all Lupaxa CICD Toolbox pipeline scripts into ~/bin"
   homepage "https://github.com/lupaxa-cicd-toolbox/get-all-tools"
-  url "https://github.com/lupaxa-cicd-toolbox/get-all-tools/archive/refs/tags/v0.1.8.tar.gz"
-  sha256 "ef86b7b9603c2e498686d20d5c83a2922512a35ea01ec1b1e0c6415b3472276a"
+  url "https://github.com/lupaxa-cicd-toolbox/get-all-tools/archive/refs/tags/v0.1.9.tar.gz"
+  sha256 "3e44b9b7d791aebb6f51a39f5545ab81bf37660bb0019b0a8e96b2c2855a340e"
   license "MIT"
 
   depends_on "python@3.13"

@@ -72,7 +72,7 @@
     - Automation
   repository: https://github.com/lupaxa-cicd-toolbox/get-all-tools
   publish_date: "2026-08-07T09:33:18"
-  released_date: "2026-10-09T11:21:15"
+  released_date: "2026-11-06T15:23:58"
 
 - name: git-change-author
   title: Git Change Author
