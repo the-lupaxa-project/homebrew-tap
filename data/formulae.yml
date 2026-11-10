@@ -2,6 +2,24 @@
 # The version banner is the tag in Formula/<name>.rb.
 # publish_date is when the tool repository was created.
 # released_date is when the formula tag was published.
+- name: bash-colour-testcard
+  title: Bash Colour Testcard
+  organisation: Developers Toolbox
+  logo: assets/images/organisations/organisation-developers-toolbox-logo.png
+  description: >-
+    Bash terminal colour testcard with simple, complete, count, and interactive
+    test modes
+  categories:
+    - Bash
+    - CLI
+    - Colours
+    - Shell
+    - Terminal
+  repository: https://github.com/lupaxa-developers-toolbox/bash-colour-testcard
+  documentation: https://thelupaxaproject.org/
+  publish_date: "2026-09-08T17:19:42"
+  released_date: "2026-10-07T09:16:00"
+
 - name: brew-manager
   title: Brew Manager
   organisation: Workstation Toolbox
@@ -13,7 +31,6 @@
     disabled casks — with confirmation prompts before destructive actions.
   categories:
     - Homebrew
-    - Workstation
     - Package Management
   repository: https://github.com/lupaxa-workstation-toolbox/brew-manager
   publish_date: "2026-08-01T09:46:31"
@@ -167,7 +184,6 @@
   logo: assets/images/organisations/organisation-workstation-toolbox-logo.png
   description: Interactive menu to reset macOS privacy grants for one app or every app.
   categories:
-    - Workstation
     - Privacy
     - macOS
     - CLI
@@ -183,13 +199,10 @@
   categories:
     - Bash
     - CLI
-    - Linux
-    - macOS
     - Recovery
     - Safe Rm
     - Shell
     - Trash
-    - Workstation
   repository: https://github.com/lupaxa-workstation-toolbox/safe-rm
   publish_date: "2026-10-03T14:45:00"
   released_date: "2026-10-07T09:25:32"
