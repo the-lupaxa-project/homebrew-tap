@@ -55,6 +55,22 @@
   publish_date: "2026-08-01T09:51:27"
   released_date: "2026-10-07T09:19:07"
 
+- name: container-manager
+  title: Container Manager
+  organisation: Docker Toolbox
+  logo: assets/images/organisations/organisation-docker-toolbox-logo.png
+  description: >-
+    Manage Docker images and containers on this machine: list them, delete
+    them, and purge unused ones.
+  categories:
+    - CLI
+    - Containers
+    - Docker
+  repository: https://github.com/lupaxa-docker-toolbox/container-manager
+  documentation: https://thelupaxaproject.org
+  publish_date: "2026-11-18T17:33:51"
+  released_date: "2026-11-18T17:53:46"
+
 - name: every-repo
   title: Every Repo
   organisation: Git Toolbox
