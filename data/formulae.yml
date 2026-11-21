@@ -207,6 +207,21 @@
   publish_date: "2026-10-02T08:52:15"
   released_date: "2026-10-07T09:25:31"
 
+- name: pip-drop-editables
+  title: Pip Drop Editables
+  organisation: Workstation Toolbox
+  logo: assets/images/organisations/organisation-workstation-toolbox-logo.png
+  description: Uninstall editable pip installs so a published release can replace them
+  categories:
+    - Bash
+    - CLI
+    - Pip
+    - Python
+  repository: https://github.com/lupaxa-workstation-toolbox/pip-drop-editables
+  documentation: https://thelupaxaproject.org
+  publish_date: "2026-11-21T14:22:33"
+  released_date: "2026-11-21T16:44:55"
+
 - name: safe-rm
   title: Safe Rm
   organisation: Workstation Toolbox
