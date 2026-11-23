@@ -38,7 +38,7 @@
     margin: 0 0 var(--lupaxa-spacing-lg);
     padding: var(--lupaxa-spacing-lg) 0 var(--lupaxa-spacing-md);
     background: none;
-    border-bottom: 1px solid #999999;
+    border-bottom: 0;
   }
 
   .lupaxa-hero-logo,
@@ -57,11 +57,28 @@
   .md-typeset .grid.cards.catalogue-grid,
   .md-typeset .grid.cards.about-summary,
   .md-typeset .grid.cards.about-principles,
-  .md-typeset .grid.cards.about-build,
-  .md-typeset .grid.cards.sponsor-reasons {
+  .md-typeset .grid.cards.about-build {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.45rem;
+  }
+
+  /* Same stack as the narrow screen: one card across the page. */
+  .md-typeset .grid.cards.sponsor-reasons {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.45rem;
+    margin-top: 0.45rem;
+    margin-bottom: 0;
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  .about-introduction.about-introduction-lead,
+  .about-introduction.sponsor-close,
+  .about-introduction.sponsor-print-card {
+    margin-top: 0.45rem;
+    margin-bottom: 0;
   }
 
   .md-typeset .grid.cards > ul > li,
@@ -154,18 +171,21 @@
   [data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li,
   [data-md-color-scheme="slate"] .md-typeset .grid.cards > li,
   .about-introduction,
-  .about-name {
-    break-inside: avoid;
-    background: #ffffff !important;
-    color: #111a32;
-    box-shadow: none;
-  }
-
+  .about-name,
   .md-typeset .lupaxa-page-card {
     background: #ffffff !important;
     color: #111a32;
-    border-color: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(0, 0, 0, 0.35);
     box-shadow: none;
+  }
+
+  .md-typeset .grid.cards > ul > li,
+  .md-typeset .grid.cards > li,
+  [data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li,
+  [data-md-color-scheme="slate"] .md-typeset .grid.cards > li,
+  .about-introduction,
+  .about-name {
+    break-inside: avoid;
   }
 
   .md-typeset .lupaxa-page-card code,
@@ -175,6 +195,16 @@
     color: #111a32 !important;
     border-color: rgba(0, 0, 0, 0.35);
     box-shadow: none;
+  }
+
+  .md-code__nav,
+  .md-code__button,
+  .md-clipboard {
+    display: none !important;
+  }
+
+  .md-typeset .lupaxa-page-card pre > code {
+    padding-right: 1.4em;
   }
 
   .md-typeset a[href]::after {
@@ -240,8 +270,87 @@
     color: #444444 !important;
   }
 
-  .no-print-page {
+  .sponsor-widget,
+  .sponsor-widget-frame,
+  .sponsor-widget iframe,
+  #kofiframe {
     display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .about-introduction.sponsor-print-card {
+    display: block !important;
+    width: 100%;
+    margin-top: 0.45rem;
+    margin-bottom: 0;
+    padding: 0.45rem 0.55rem;
+    text-align: center;
+  }
+
+  .md-typeset .about-introduction.sponsor-print-card p {
+    margin: 0;
+    text-align: center !important;
+  }
+
+  .md-typeset .about-introduction.sponsor-print-card p:first-child {
+    margin-bottom: 0.35rem;
+  }
+
+  .md-typeset .about-introduction strong,
+  [data-md-color-scheme="slate"] .about-introduction strong {
+    color: #111a32 !important;
+    font-weight: 700;
+  }
+
+  .md-typeset .sponsor-print-card p:first-child strong {
+    font-size: 0.88rem;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .md-typeset .sponsor-print-card .twemoji,
+  .md-typeset .sponsor-print-card .twemoji svg {
+    color: #111a32 !important;
+    fill: currentcolor;
+  }
+
+  .md-typeset .sponsor-print-card a {
+    color: #111a32 !important;
+    font-weight: 400;
+    text-decoration: none;
+  }
+
+  .md-typeset .sponsor-print-card a[href]::after {
+    content: none;
+  }
+
+  .md-typeset .grid.cards,
+  .md-typeset .grid.cards strong,
+  .md-typeset .grid.cards a,
+  .md-typeset .grid.cards .twemoji,
+  .md-typeset .grid.cards .twemoji svg,
+  .md-typeset .about-introduction,
+  .md-typeset .about-introduction p {
+    color: #111a32 !important;
+  }
+
+  .md-typeset .grid.cards .twemoji svg {
+    fill: currentcolor;
+  }
+
+  .md-typeset .grid.cards:not(.catalogue-grid) > ul > li > p:not(:first-child),
+  .md-typeset .grid.cards:not(.catalogue-grid) > li > p:not(:first-child),
+  .md-typeset .about-introduction p {
+    text-align: left !important;
+    hyphens: manual;
+    -webkit-hyphens: manual;
+  }
+
+  .md-typeset .about-introduction.sponsor-close p {
+    text-align: center !important;
   }
 
   .md-typeset .print-page-notice {
