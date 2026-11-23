@@ -9,21 +9,7 @@
 
 {% include "partials/actions.html" %}
 
-{# Same page list as overrides/main.html. Nested blocks cannot see that set. #}
-{% set is_card_page = page and page.file and page.file.src_uri in [] %}
-{% if is_card_page %}
-<div class="lupaxa-article-card">
 {{ page.content }}
-</div>
-{% elif page.is_homepage and "<!-- lupaxa-article-card -->" in page.content %}
-{% set hero, article = page.content.split("<!-- lupaxa-article-card -->", 1) %}
-{{ hero }}
-<div class="lupaxa-article-card">
-{{ article }}
-</div>
-{% else %}
-{{ page.content }}
-{% endif %}
 
 {% include "partials/source-file.html" %}
 

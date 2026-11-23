@@ -46,18 +46,7 @@
       </feMerge>
     </filter>
   </svg>
-  {# Same page list as overrides/partials/content.html. #}
-  {% set is_card_page = page and page.file and page.file.src_uri in [] %}
-  <div class="md-content" data-md-component="content">
-    {% if "navigation.path" in features %}
-      {% include "partials/path.html" %}
-    {% endif %}
-    <article class="md-content__inner md-typeset{% if is_card_page %} lupaxa-article-page{% endif %}">
-      {% block content %}
-        {% include "partials/content.html" %}
-      {% endblock %}
-    </article>
-  </div>
+  {{ super() }}
 {% endblock %}
 
 {% block extrahead %}
@@ -70,6 +59,13 @@
     data-id="{{ config.extra.counter_dev_id | e }}"
     data-utcoffset="{{ config.extra.counter_dev_utcoffset | d(0) | e }}"
   ></script>
+  {% endif %}
+
+  {# Cloudflare Web Analytics — only when extra.cloudflare_analytics_token is set #}
+  {% if config.extra.cloudflare_analytics_token %}
+  <!-- Cloudflare Web Analytics -->
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ config.extra.cloudflare_analytics_token | e }}"}'></script>
+  <!-- End Cloudflare Web Analytics -->
   {% endif %}
 
   {% if config.extra.hide_primary_sidebar or config.extra.hide_secondary_sidebar %}
@@ -154,8 +150,6 @@
      Standard metadata
      ------------------------------------------------------------------------- #}
 
-  <meta name="description" content="{{ social_description | e }}">
-  <meta name="author" content="{{ config.site_author | e }}">
   <meta name="application-name" content="{{ config.site_name | e }}">
   <meta name="theme-color" content="{{ config.extra.theme_color | d('#203959') }}">
   <meta name="color-scheme" content="dark">

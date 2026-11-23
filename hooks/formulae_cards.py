@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import html
 import re
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
@@ -16,6 +17,20 @@ FORMULA_DIR = REPO_ROOT / "Formula"
 MARKER = "<!-- formulae -->"
 TAG_RE = re.compile(
     r'url\s+"https://github\.com/[^/]+/[^/]+/archive/refs/tags/(v[^"]+)\.tar\.gz"'
+)
+_RELEASE_MONTHS = (
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
 )
 REQUIRED = (
     "name",
@@ -203,51 +218,102 @@ def asset_href(page: object, path: str) -> str:
     return ("../" * depth) + path
 
 
+def display_version(tag: str) -> str:
+    """Return the tag without a leading v, matching project-card versions."""
+    text = tag.strip()
+    if len(text) > 1 and text[0] in "vV" and text[1].isdigit():
+        return text[1:]
+    return text
+
+
+def release_date_label(value: str) -> str:
+    """Return a sash date such as ``7 Oct 2026``."""
+    parsed = datetime.fromisoformat(value.strip().replace(" ", "T"))
+    return f"{parsed.day} {_RELEASE_MONTHS[parsed.month - 1]} {parsed.year}"
+
+
+def title_icon_link(href: str, tooltip: str, icon: str, modifier: str) -> str:
+    """Icon link beside a card title. The title text itself is not the link."""
+    safe_href = html.escape(href, quote=True)
+    safe_tip = html.escape(tooltip, quote=True)
+    return (
+        f'<a class="catalogue-title-link catalogue-title-link--{modifier}" '
+        f'href="{safe_href}" target="_blank" rel="noopener noreferrer" '
+        f'title="{safe_tip}" aria-label="{safe_tip}">'
+        f'<span class="md-icon">:{icon}:</span></a>'
+    )
+
+
 def render_card(item: dict[str, Any], page: object) -> str:
-    """Return one Material card list item. HTML lines stay at four spaces."""
+    """Return one project-style catalogue card. HTML lines stay at four spaces."""
+    title = str(item["title"])
     organisation = html.escape(str(item["organisation"]), quote=True)
+    name_attr = html.escape(title, quote=True)
     logo = html.escape(asset_href(page, str(item["logo"])), quote=True)
-    version = html.escape(str(item["version"]), quote=True)
-    repository = html.escape(str(item["repository"]), quote=True)
+    version = display_version(str(item["version"]))
+    released_raw = str(item["released_date"])
+    released_label = release_date_label(released_raw)
+    published = html.escape(str(item["publish_date"]), quote=True)
+    released = html.escape(released_raw, quote=True)
+    safe_version = html.escape(f"v{version}", quote=True)
+    safe_released = html.escape(released_label, quote=True)
     categories = [
         f'    <button type="button" class="catalogue-category">{html.escape(str(category), quote=True)}</button>'
         for category in item["categories"]
     ]
-    docs = ""
-    if item.get("documentation"):
-        documentation = html.escape(str(item["documentation"]), quote=True)
-        docs = (
-            "\n"
-            f'    <a class="catalogue-action catalogue-action--documentation" href="{documentation}" target="_blank" rel="noopener noreferrer">\n'
-            '    <span class="md-icon">:material-book-open-page-variant:</span> Documentation\n'
-            "    </a>"
+    heading_parts = [
+        title_icon_link(
+            str(item["repository"]),
+            f"View {title} on GitHub",
+            "material-github",
+            "github",
+        ),
+        f'<span class="catalogue-title-text">{html.escape(title)}</span>',
+    ]
+    documentation = str(item.get("documentation") or "").strip()
+    if documentation:
+        heading_parts.append(
+            title_icon_link(
+                documentation,
+                f"Visit the {title} website",
+                "material-web",
+                "site",
+            )
         )
-    released = html.escape(str(item["released_date"]), quote=True)
-    published = html.escape(str(item["publish_date"]), quote=True)
+    banner = (
+        '    <span class="catalogue-banner catalogue-banner--blue '
+        'catalogue-banner--with-version catalogue-banner--split" '
+        'data-banner-status="released" data-banner-label="Released" '
+        f'aria-label="Version: v{html.escape(version)} Released: {safe_released}">'
+        '<span class="catalogue-banner__band" aria-hidden="true">'
+        '<span class="catalogue-banner__text">'
+        f'<span class="catalogue-banner__version">Version: '
+        f'<span translate="no">{safe_version}</span></span>'
+        f'<span class="catalogue-banner__date">Released: '
+        f'<span translate="no">{safe_released}</span></span>'
+        "</span></span></span>"
+    )
     return "\n".join(
         [
-            f"-   ### :material-source-repository: {item['title']} {{ #{item['name']} .no_toc translate=no }}",
+            f"-   ### {''.join(heading_parts)} {{ #{item['name']} .no_toc translate=no }}",
             "",
-            "    ---",
-            "",
-            f'    <span class="catalogue-banner catalogue-banner--version catalogue-banner--short" aria-label="{version}">',
-            '    <span class="catalogue-banner__band" aria-hidden="true">',
-            f'    <span class="catalogue-banner__text" translate="no">{version}</span>',
-            "    </span></span>",
-            "",
-            '    <span class="catalogue-logo-wrap">',
-            f'    <img class="catalogue-logo" translate="no" title="{organisation}" alt="{organisation}" data-name="{html.escape(str(item["title"]), quote=True)}" data-organisation="{organisation}" data-publish-date="{published}" data-released-date="{released}" src="{logo}" />',
-            "    </span>",
+            "    <img",
+            '        class="catalogue-logo"',
+            '        translate="no"',
+            f'        title="{organisation}"',
+            f'        data-name="{name_attr}"',
+            f'        data-organisation="{organisation}"',
+            f'        data-publish-date="{published}"',
+            f'        data-released-date="{released}"',
+            f'        src="{logo}"',
+            f'        alt="{organisation}"',
+            "    />",
             "",
             _wrap(str(item["description"])),
             "",
             *categories,
             "",
-            "    ---",
-            "",
-            f'    <a class="catalogue-action catalogue-action--repository" href="{repository}" target="_blank" rel="noopener noreferrer">',
-            '    <span class="md-icon">:material-github:</span> View on GitHub',
-            "    </a>" + docs,
+            banner,
             "",
         ]
     )

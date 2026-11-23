@@ -45,13 +45,19 @@ docs_dir: mkdocs
 site_dir: site
 use_directory_urls: true
 
-# Reload on catalogue data / build Python / hooks / CSS / JS during `mkdocs serve`.
-# MkDocs watch has no globs — list directories (not tests/).
+# `mkdocs serve` already watches `mkdocs/` (pages, CSS, JavaScript, images,
+# fonts) and `overrides/` (the theme). These extra paths sit outside that
+# tree. MkDocs watch has no globs. Do not add tests/.
+# Editing this file still needs one restart so the new list is loaded.
 watch:
   - data
+  - Formula
   - hooks
+  - overrides
   - mkdocs/assets/stylesheets
   - mkdocs/assets/javascript
+  - mkdocs/assets/images
+  - mkdocs/assets/fonts
 
 # =============================================================================
 # Theme
@@ -60,9 +66,8 @@ watch:
 theme:
   name: material
   custom_dir: overrides
-  font:
-    text: IBM Plex Sans
-    code: IBM Plex Mono
+  # IBM Plex is self-hosted. Do not load it from Google Fonts.
+  font: false
   language: en
   logo: assets/images/logo.png
   favicon: assets/images/favicon.png
@@ -95,6 +100,7 @@ plugins:
 hooks:
   - hooks/asset_cache_bust.py
   - hooks/formulae_cards.py
+  - hooks/template_whitespace.py
 
 # =============================================================================
 # Navigation
@@ -102,6 +108,7 @@ hooks:
 
 nav:
   - Home: index.md
+  - Usage: usage.md
   - Formulae: formulae.md
   - Sponsor: sponsor.md
 
@@ -143,6 +150,7 @@ markdown_extensions:
 # =============================================================================
 
 extra_css:
+  - assets/stylesheets/00-fonts.css
   - assets/stylesheets/00-tokens.css
   - assets/stylesheets/10-base.css
   - assets/stylesheets/20-layout.css
@@ -156,7 +164,6 @@ extra_css:
   - assets/stylesheets/40-components/tables.css
   - assets/stylesheets/50-pages/about.css
   - assets/stylesheets/50-pages/sponsor.css
-  - assets/stylesheets/50-pages/article.css
   - assets/stylesheets/90-responsive.css
   - assets/stylesheets/95-print.css
   - assets/stylesheets/99-overrides.css

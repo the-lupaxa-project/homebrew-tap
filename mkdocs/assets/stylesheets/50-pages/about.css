@@ -5,17 +5,17 @@
 
 .about-introduction {
   margin: 1.5rem 0 var(--lupaxa-spacing-lg);
-  padding: 1.5rem 1.75rem;
+  padding: var(--lupaxa-spacing-md);
   cursor: default;
   background:
     linear-gradient(
       145deg,
       color-mix(
         in srgb,
-        var(--md-default-bg-color) 96%,
+        var(--lupaxa-card-bg-raised) 96%,
         var(--lupaxa-blue)
       ),
-      var(--md-default-bg-color)
+      var(--lupaxa-card-bg)
     );
   border: 1px solid var(--md-default-fg-color--lightest);
   border-radius: var(--lupaxa-radius-card);
@@ -32,10 +32,10 @@
       145deg,
       color-mix(
         in srgb,
-        var(--md-default-bg-color) 90%,
+        var(--lupaxa-card-bg-raised) 90%,
         var(--lupaxa-light-blue)
       ),
-      var(--md-default-bg-color)
+      var(--lupaxa-card-bg)
     );
   border-color:
     color-mix(
@@ -49,14 +49,15 @@
 .about-introduction p {
   margin: 0;
   color: inherit;
-  font-size: inherit;
+  font-size: 0.76rem;
+  line-height: 1.45;
   text-align: justify;
   hyphens: auto;
   -webkit-hyphens: auto;
 }
 
-.about-introduction-lead p {
-  font-size: 20px;
+.about-introduction.about-introduction-lead {
+  margin-bottom: var(--lupaxa-spacing-md);
 }
 
 .about-introduction p + p {
@@ -72,10 +73,14 @@
   color: var(--lupaxa-light-blue);
 }
 
-.md-typeset .grid.cards.about-summary,
 .md-typeset .grid.cards.about-principles,
 .md-typeset .grid.cards.about-build {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.md-typeset .grid.cards.about-summary {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: var(--lupaxa-spacing-md);
 }
 
 .md-typeset .about-summary > ul > li,
@@ -84,7 +89,7 @@
 .md-typeset .about-principles > li,
 .md-typeset .about-build > ul > li,
 .md-typeset .about-build > li {
-  padding: var(--lupaxa-spacing-md) 1.4rem;
+  padding: var(--lupaxa-spacing-md);
 }
 
 .md-typeset .about-summary > ul > li > p:first-child,
@@ -115,17 +120,17 @@
   gap: 1.5rem;
   align-items: center;
   margin: 1.5rem 0 var(--lupaxa-spacing-lg);
-  padding: 1.5rem;
+  padding: var(--lupaxa-spacing-md);
   cursor: default;
   background:
     linear-gradient(
       145deg,
       color-mix(
         in srgb,
-        var(--md-default-bg-color) 94%,
+        var(--lupaxa-card-bg-raised) 94%,
         var(--lupaxa-blue)
       ),
-      var(--md-default-bg-color)
+      var(--lupaxa-card-bg)
     );
   border: 1px solid var(--md-default-fg-color--lightest);
   border-radius: var(--lupaxa-radius-card);
@@ -142,10 +147,10 @@
       145deg,
       color-mix(
         in srgb,
-        var(--md-default-bg-color) 90%,
+        var(--lupaxa-card-bg-raised) 90%,
         var(--lupaxa-light-blue)
       ),
-      var(--md-default-bg-color)
+      var(--lupaxa-card-bg)
     );
   border-color:
     color-mix(
@@ -167,11 +172,13 @@
 
 .about-name-content p {
   margin: 0;
+  font-size: 0.76rem;
+  line-height: 1.45;
   text-align: justify;
   hyphens: auto;
   -webkit-hyphens: auto;
 }
 
 .about-name-content p + p {
-  margin-top: 0.75rem;
+  margin-top: 0.9rem;
 }

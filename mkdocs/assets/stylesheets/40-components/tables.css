@@ -22,6 +22,8 @@
   max-width: 100% !important;
   margin-bottom: 0.5em;
   padding: 0 !important;
+  overflow: hidden;
+  border-radius: var(--lupaxa-radius-button);
   box-sizing: border-box;
 }
 
@@ -32,7 +34,10 @@
   max-width: 100% !important;
   table-layout: fixed;
   margin: 0 !important;
-  overflow: visible;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--lupaxa-radius-button);
+  overflow: hidden;
 }
 
 .md-typeset table:not([class]) th,
@@ -83,21 +88,6 @@
 .md-typeset table:not([class]) tr > :nth-child(3):nth-last-child(1),
 .md-typeset .md-typeset__table table tr > :nth-child(3):nth-last-child(1) {
   width: 60%;
-}
-
-/* Formula | description | repository link. The link column is an icon. */
-.md-typeset .formulae table tr > :nth-child(1):nth-last-child(3) {
-  width: 22%;
-}
-
-.md-typeset .formulae table tr > :nth-child(2):nth-last-child(2) {
-  width: 60%;
-}
-
-.md-typeset .formulae table tr > :nth-child(3):nth-last-child(1) {
-  width: 18%;
-  text-align: center;
-  white-space: nowrap;
 }
 
 /* 4 columns — even split */
